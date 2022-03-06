@@ -8,17 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		53C9499927D4299E006C38B7 /* AX_BApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9499827D4299E006C38B7 /* AX_BApp.swift */; };
-		53C9499B27D4299E006C38B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9499A27D4299E006C38B7 /* ContentView.swift */; };
 		53C9499D27D429A0006C38B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C9499C27D429A0006C38B7 /* Assets.xcassets */; };
 		53C949A027D429A0006C38B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C9499F27D429A0006C38B7 /* Preview Assets.xcassets */; };
+		53C949B027D42B3C006C38B7 /* Equations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949AB27D42A23006C38B7 /* Equations.swift */; };
+		53C949CC27D42C38006C38B7 /* Gauss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949CB27D42C38006C38B7 /* Gauss.swift */; };
+		53C949CE27D42C64006C38B7 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949CD27D42C64006C38B7 /* AboutView.swift */; };
+		53C949D227D42C6C006C38B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D127D42C6C006C38B7 /* ContentView.swift */; };
+		53C949D427D42C7C006C38B7 /* EquationSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D327D42C7C006C38B7 /* EquationSection.swift */; };
+		53C949D627D42C7F006C38B7 /* EquationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D527D42C7F006C38B7 /* EquationsView.swift */; };
+		53C949D827D42C84006C38B7 /* SolveButtonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D727D42C84006C38B7 /* SolveButtonSection.swift */; };
+		53C949DA27D42C94006C38B7 /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D927D42C93006C38B7 /* LeftMenuView.swift */; };
+		53C949DC27D42C98006C38B7 /* NewProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949DB27D42C98006C38B7 /* NewProblemView.swift */; };
+		53C949DE27D42C9E006C38B7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949DD27D42C9E006C38B7 /* SettingsView.swift */; };
+		53C949E027D42CA2006C38B7 /* VerificationProblemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949DF27D42CA2006C38B7 /* VerificationProblemsView.swift */; };
+		53C949E227D42CC6006C38B7 /* DocumentPickerFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949E127D42CC5006C38B7 /* DocumentPickerFiles.swift */; };
+		53C949E427D42CC9006C38B7 /* ProjectRoutines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949E327D42CC9006C38B7 /* ProjectRoutines.swift */; };
+		53C949E627D42CD2006C38B7 /* VerificationProblems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949E527D42CD2006C38B7 /* VerificationProblems.swift */; };
+		53C949ED27D42E84006C38B7 /* FileNamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949EC27D42E84006C38B7 /* FileNamer.swift */; };
+		53C949F627D43BD1006C38B7 /* AX-B-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53C949F527D4356A006C38B7 /* AX-B-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		53C9499527D4299E006C38B7 /* AX=B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AX=B.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C9499827D4299E006C38B7 /* AX_BApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AX_BApp.swift; sourceTree = "<group>"; };
-		53C9499A27D4299E006C38B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53C9499C27D429A0006C38B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53C9499F27D429A0006C38B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		53C949AB27D42A23006C38B7 /* Equations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equations.swift; sourceTree = "<group>"; };
+		53C949CB27D42C38006C38B7 /* Gauss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauss.swift; sourceTree = "<group>"; };
+		53C949CD27D42C64006C38B7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		53C949D127D42C6C006C38B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		53C949D327D42C7C006C38B7 /* EquationSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationSection.swift; sourceTree = "<group>"; };
+		53C949D527D42C7F006C38B7 /* EquationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationsView.swift; sourceTree = "<group>"; };
+		53C949D727D42C84006C38B7 /* SolveButtonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveButtonSection.swift; sourceTree = "<group>"; };
+		53C949D927D42C93006C38B7 /* LeftMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
+		53C949DB27D42C98006C38B7 /* NewProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProblemView.swift; sourceTree = "<group>"; };
+		53C949DD27D42C9E006C38B7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		53C949DF27D42CA2006C38B7 /* VerificationProblemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationProblemsView.swift; sourceTree = "<group>"; };
+		53C949E127D42CC5006C38B7 /* DocumentPickerFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerFiles.swift; sourceTree = "<group>"; };
+		53C949E327D42CC9006C38B7 /* ProjectRoutines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRoutines.swift; sourceTree = "<group>"; };
+		53C949E527D42CD2006C38B7 /* VerificationProblems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationProblems.swift; sourceTree = "<group>"; };
+		53C949EC27D42E84006C38B7 /* FileNamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNamer.swift; sourceTree = "<group>"; };
+		53C949F427D4322E006C38B7 /* AX=B.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AX=B.entitlements"; sourceTree = "<group>"; };
+		53C949F527D4356A006C38B7 /* AX-B-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "AX-B-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +82,15 @@
 		53C9499727D4299E006C38B7 /* AX=B */ = {
 			isa = PBXGroup;
 			children = (
+				53C949F527D4356A006C38B7 /* AX-B-Info.plist */,
+				53C949F427D4322E006C38B7 /* AX=B.entitlements */,
 				53C9499827D4299E006C38B7 /* AX_BApp.swift */,
-				53C9499A27D4299E006C38B7 /* ContentView.swift */,
+				53C949EA27D42DF3006C38B7 /* Views */,
+				53C949EB27D42E1B006C38B7 /* EquationScreen */,
+				53C949EE27D42E99006C38B7 /* MainViewModel */,
+				53C949F127D42F46006C38B7 /* Model */,
+				53C949F227D42F6C006C38B7 /* VerificationProblems */,
+				53C949F327D42FC4006C38B7 /* HelperRoutines */,
 				53C9499C27D429A0006C38B7 /* Assets.xcassets */,
 				53C9499E27D429A0006C38B7 /* Preview Content */,
 			);
@@ -65,6 +103,63 @@
 				53C9499F27D429A0006C38B7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		53C949EA27D42DF3006C38B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53C949CD27D42C64006C38B7 /* AboutView.swift */,
+				53C949D127D42C6C006C38B7 /* ContentView.swift */,
+				53C949D727D42C84006C38B7 /* SolveButtonSection.swift */,
+				53C949D927D42C93006C38B7 /* LeftMenuView.swift */,
+				53C949DB27D42C98006C38B7 /* NewProblemView.swift */,
+				53C949DD27D42C9E006C38B7 /* SettingsView.swift */,
+				53C949EC27D42E84006C38B7 /* FileNamer.swift */,
+				53C949DF27D42CA2006C38B7 /* VerificationProblemsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		53C949EB27D42E1B006C38B7 /* EquationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				53C949D327D42C7C006C38B7 /* EquationSection.swift */,
+				53C949D527D42C7F006C38B7 /* EquationsView.swift */,
+			);
+			path = EquationScreen;
+			sourceTree = "<group>";
+		};
+		53C949EE27D42E99006C38B7 /* MainViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				53C949AB27D42A23006C38B7 /* Equations.swift */,
+			);
+			path = MainViewModel;
+			sourceTree = "<group>";
+		};
+		53C949F127D42F46006C38B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53C949CB27D42C38006C38B7 /* Gauss.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		53C949F227D42F6C006C38B7 /* VerificationProblems */ = {
+			isa = PBXGroup;
+			children = (
+				53C949E527D42CD2006C38B7 /* VerificationProblems.swift */,
+			);
+			path = VerificationProblems;
+			sourceTree = "<group>";
+		};
+		53C949F327D42FC4006C38B7 /* HelperRoutines */ = {
+			isa = PBXGroup;
+			children = (
+				53C949E327D42CC9006C38B7 /* ProjectRoutines.swift */,
+				53C949E127D42CC5006C38B7 /* DocumentPickerFiles.swift */,
+			);
+			path = HelperRoutines;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +222,7 @@
 			files = (
 				53C949A027D429A0006C38B7 /* Preview Assets.xcassets in Resources */,
 				53C9499D27D429A0006C38B7 /* Assets.xcassets in Resources */,
+				53C949F627D43BD1006C38B7 /* AX-B-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +233,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53C9499B27D4299E006C38B7 /* ContentView.swift in Sources */,
+				53C949CE27D42C64006C38B7 /* AboutView.swift in Sources */,
+				53C949E027D42CA2006C38B7 /* VerificationProblemsView.swift in Sources */,
+				53C949CC27D42C38006C38B7 /* Gauss.swift in Sources */,
+				53C949D627D42C7F006C38B7 /* EquationsView.swift in Sources */,
+				53C949D227D42C6C006C38B7 /* ContentView.swift in Sources */,
 				53C9499927D4299E006C38B7 /* AX_BApp.swift in Sources */,
+				53C949B027D42B3C006C38B7 /* Equations.swift in Sources */,
+				53C949D427D42C7C006C38B7 /* EquationSection.swift in Sources */,
+				53C949D827D42C84006C38B7 /* SolveButtonSection.swift in Sources */,
+				53C949DA27D42C94006C38B7 /* LeftMenuView.swift in Sources */,
+				53C949DE27D42C9E006C38B7 /* SettingsView.swift in Sources */,
+				53C949E627D42CD2006C38B7 /* VerificationProblems.swift in Sources */,
+				53C949ED27D42E84006C38B7 /* FileNamer.swift in Sources */,
+				53C949E227D42CC6006C38B7 /* DocumentPickerFiles.swift in Sources */,
+				53C949DC27D42C98006C38B7 /* NewProblemView.swift in Sources */,
+				53C949E427D42CC9006C38B7 /* ProjectRoutines.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,17 +376,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "AX=B/AX=B.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AX=B/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GFL38QM4Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AX-B-Info.plist";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -284,6 +398,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CasaAdobeSoftware.AX-B";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -295,17 +410,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "AX=B/AX=B.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AX=B/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GFL38QM4Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AX-B-Info.plist";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +432,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CasaAdobeSoftware.AX-B";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

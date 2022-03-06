@@ -11,7 +11,7 @@ import SwiftUI
 struct AX_BApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(numEqs:2, numEqsText: "2", equations: Equations(neq: 2), system: Gauss(neq: 2))
         }
     }
 }
