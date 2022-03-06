@@ -25,7 +25,6 @@
 		53C949E427D42CC9006C38B7 /* ProjectRoutines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949E327D42CC9006C38B7 /* ProjectRoutines.swift */; };
 		53C949E627D42CD2006C38B7 /* VerificationProblems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949E527D42CD2006C38B7 /* VerificationProblems.swift */; };
 		53C949ED27D42E84006C38B7 /* FileNamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949EC27D42E84006C38B7 /* FileNamer.swift */; };
-		53C949F627D43BD1006C38B7 /* AX-B-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53C949F527D4356A006C38B7 /* AX-B-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,7 +221,6 @@
 			files = (
 				53C949A027D429A0006C38B7 /* Preview Assets.xcassets in Resources */,
 				53C9499D27D429A0006C38B7 /* Assets.xcassets in Resources */,
-				53C949F627D43BD1006C38B7 /* AX-B-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
