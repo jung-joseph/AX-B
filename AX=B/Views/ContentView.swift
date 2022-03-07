@@ -35,12 +35,14 @@ struct ContentView: View {
     @State var showNewProblem = false
     @State var neqText = "2"
     
+    
     //    var localEquations: Equations
     @ObservedObject var equations: Equations
     @ObservedObject var system: Gauss
     @ObservedObject var verificationProblems = VerificationProblems()
     
-    
+    @Binding var isDarkMode: Bool
+
     
     
     
@@ -55,7 +57,7 @@ struct ContentView: View {
                 
                 
                 HStack{
-                    LeftMenuView(showAbout: $showAbout, showNewProblem: $showNewProblem, showVerification: $showVerification, showEquationView: $showEquationView, neqText: $neqText, showDocumentPicker: $showDocumentPicker, readFileContent: $readFileContent, numEqsText: $numEqsText, numEqs: $numEqs, showSettingsView: $showSettingsView, numSigFigs: $numSigFigs, equations: equations, system: system)
+                    LeftMenuView(showAbout: $showAbout, showNewProblem: $showNewProblem, showVerification: $showVerification, showEquationView: $showEquationView, neqText: $neqText, showDocumentPicker: $showDocumentPicker, readFileContent: $readFileContent, numEqsText: $numEqsText, numEqs: $numEqs, showSettingsView: $showSettingsView, numSigFigs: $numSigFigs,isDarkMode: $isDarkMode, equations: equations, system: system)
 
                     
                     //                Mark:  EquationView
@@ -89,7 +91,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self){
-            ContentView(numEqs: 2, numEqsText: "2",equations: Equations(neq: 2), system: Gauss(neq: 2))
+            ContentView(numEqs: 2, numEqsText: "2",equations: Equations(neq: 2), system: Gauss(neq: 2), isDarkMode: .constant(false))
             .preferredColorScheme($0)
 .previewInterfaceOrientation(.landscapeRight)
         }

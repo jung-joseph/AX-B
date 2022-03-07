@@ -12,6 +12,7 @@ struct SettingsView: View {
     
     @Binding var numSigFigs: String
     @Binding var showSettingsView: Bool
+    @Binding var isDarkMode: Bool
     
     var body: some View {
         VStack {
@@ -44,6 +45,7 @@ struct SettingsView: View {
                         numSigFigs = "4"
                     }
                     
+                    
                    
                 }
                 .background(Color.red)
@@ -52,6 +54,23 @@ struct SettingsView: View {
                 .shadow(radius: 10)
                 .padding()
             }
+            
+            HStack {
+                Spacer()
+                Text("Select Appearance Mode: ")
+                    .foregroundColor(Color.black)
+
+                Picker("Mode", selection: $isDarkMode) {
+                    Text("Light")
+                        .tag(false)
+                    Text("Dark")
+                        .tag(true)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .fixedSize()
+                Spacer()
+            }
+            
         }
         .keyboardType(.decimalPad)
     }
@@ -59,6 +78,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(numSigFigs: .constant("3"), showSettingsView: .constant(true))
+        SettingsView(numSigFigs: .constant("3"), showSettingsView: .constant(true), isDarkMode: .constant(false))
     }
 }

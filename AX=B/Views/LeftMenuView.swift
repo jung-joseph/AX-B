@@ -20,6 +20,7 @@ struct LeftMenuView: View {
     @Binding var numEqs: Int
     @Binding var showSettingsView: Bool
     @Binding var numSigFigs: String
+    @Binding var isDarkMode: Bool
     
     
     @ObservedObject var equations: Equations
@@ -40,6 +41,7 @@ struct LeftMenuView: View {
             }
             .sheet(isPresented: $showAbout) {
                 AboutView(showAbout: self.$showAbout)
+                    .preferredColorScheme(.light)
                     .onDisappear{
                         
                     }
@@ -61,7 +63,7 @@ struct LeftMenuView: View {
 
                         }
                         .sheet(isPresented: $showSettingsView) {
-                            SettingsView(numSigFigs: $numSigFigs, showSettingsView: $showSettingsView)
+                            SettingsView(numSigFigs: $numSigFigs, showSettingsView: $showSettingsView, isDarkMode: $isDarkMode)
                             
                                 .onDisappear {
                                     //                                    print("in Start New Problem")
@@ -237,6 +239,6 @@ struct LeftMenuView: View {
 
 struct LeftMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        LeftMenuView(showAbout: .constant(false), showNewProblem: .constant(false), showVerification: .constant(false), showEquationView: .constant(false), neqText: .constant("2"), showDocumentPicker: .constant(false), readFileContent: .constant(" "), numEqsText: .constant("2"), numEqs: .constant(2), showSettingsView: .constant(false), numSigFigs: .constant("3"), equations: Equations(neq: 2), system: Gauss(neq: 2))
+        LeftMenuView(showAbout: .constant(false), showNewProblem: .constant(false), showVerification: .constant(false), showEquationView: .constant(false), neqText: .constant("2"), showDocumentPicker: .constant(false), readFileContent: .constant(" "), numEqsText: .constant("2"), numEqs: .constant(2), showSettingsView: .constant(false), numSigFigs: .constant("3"), isDarkMode: .constant(false), equations: Equations(neq: 2), system: Gauss(neq: 2))
     }
 }
