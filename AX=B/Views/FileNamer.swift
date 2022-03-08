@@ -28,6 +28,10 @@ struct FileNamer: View {
 
             
             Button("Submit") {
+                // check if fileName is empty
+                if fileName == "" {
+                    fileName = "TempFileName"
+                }
                 // check for .txt extension and add if missing
                 let pathExtension = (fileName as NSString).pathExtension
                 if pathExtension == "" {
