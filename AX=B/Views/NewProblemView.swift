@@ -46,7 +46,17 @@ struct NewProblemView: View {
                 
                 Button("Submit") {
                     
+                    // check the validity and allowable size of the problem
+                    if neqText == ""{
+                        neqText = "2"
+                    }
+                    if (Int(neqText)! < 1 ) {
+                        neqText = "2"
+                    } else if (Int(neqText)! > 10) {
+                        neqText = "10"
+                    }
                     self.showNewProblem = false
+                   
                 }
                 .background(Color.red)
                 .foregroundColor(Color.white)
