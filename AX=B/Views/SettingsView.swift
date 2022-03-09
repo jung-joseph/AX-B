@@ -29,10 +29,26 @@ struct SettingsView: View {
                     .font(.custom("Arial", size: 15)).fixedSize()
                     .foregroundColor(Color.black)
                     .colorScheme(.light)
+                    .keyboardType(.decimalPad)
+            }
+            HStack {
+                Spacer()
+                Text("Appearance Mode: ")
+                    .foregroundColor(Color.black)
 
-                    
-                
-                Button("Submit") {
+                Picker("Mode", selection: $isDarkMode) {
+                    Text("Light")
+                        .tag(false)
+                    Text("Dark")
+                        .tag(true)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .fixedSize()
+                Spacer()
+            }
+            
+            HStack {
+                Button(action: {
                     self.showSettingsView = false
                     // check for validity of numSigFig and make sure it is >= 2
                     if let numDigits = Int(numSigFigs){
@@ -47,32 +63,31 @@ struct SettingsView: View {
                     
                     
                    
+                }) {
+                    Text("Submit")
+                        .padding(.horizontal, 4)
                 }
                 .background(Color.red)
                 .foregroundColor(Color.white)
                 .cornerRadius(10)
                 .shadow(radius: 10)
                 .padding()
-            }
-            
-            HStack {
-                Spacer()
-                Text("Select Appearance Mode: ")
-                    .foregroundColor(Color.black)
 
-                Picker("Mode", selection: $isDarkMode) {
-                    Text("Light")
-                        .tag(false)
-                    Text("Dark")
-                        .tag(true)
+                Button(action:{
+                    self.showSettingsView = false
+                }) {
+                    Text("Cancel")
+                        .padding(.horizontal, 4)
+
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .fixedSize()
-                Spacer()
+                .background(Color.red)
+                .foregroundColor(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 10)
+                .padding()
+
             }
-            
         }
-        .keyboardType(.decimalPad)
     }
 }
 
