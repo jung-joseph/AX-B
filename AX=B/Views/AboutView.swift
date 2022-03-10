@@ -83,10 +83,11 @@ struct AboutView: View {
                             .padding(EdgeInsets(top: 25, leading: 25, bottom: 0, trailing: 10))
                         
                         VStack {
-                            Text("The actual app usage should be intuitive, but some guidance may be useful. The user may either initiate a completely new problem or read-in a problem that he/she had previously entered and saved. Saved problems and saved solutions are stored in Files App on iOS devices in JSON format. Once the problem has been entered (the coefficients of the A matrix and B vector are defined), any one of three solution algorithms may be used. All three algorithms are variants of Gauss elimination with back substituion (1). I included three algorithms to allow the user to explore how these variants perform for different types of problems. The algorithms are: Gauss Elimination with no row interchanges, Gauss Elimination with Maximal Column Pivoting, and Gauss Elimination with Scaled Column Pivoting. To assist the user in evaluating the performance of the different algorithms and the quality of the solution, an Error vector (the difference of each equation's B value and the computed result) is given. The users should always exam the values in the Error vector! In general, the Scaled Column Pivoting algorithm is considered be the most robust in working with poorly conditioned equation systems (1). The solution file may also be exported for subsequent use.")
+                            Text("The actual app usage should be intuitive, but some guidance may be useful. The user may either initiate a completely new problem or read-in a problem that he/she had previously entered and saved. Saved problems and saved solutions are stored in Files App on iOS devices in JSON format. Once the problem has been entered (the coefficients of the A matrix and B vector are defined), any one of three solution algorithms may be used. All three algorithms are variants of Gauss elimination with back substituion (1). I included three algorithms to allow the user to explore how these variants perform for different types of problems. The algorithms are: Gauss Elimination with no row interchanges, Gauss Elimination with Maximal Column Pivoting, and Gauss Elimination with Scaled Column Pivoting. To assist the user in evaluating the performance of the different algorithms and the quality of the solution, an Error vector (the difference of each equation's B value and the computed result) is given. The users should always exam the values in the Error vector! In general, the Scaled Column Pivoting algorithm is considered be the most robust in working with poorly conditioned equation systems (1). The solution file may also be exported for subsequent use. If you are unfamilar with the matrix form of simultaneous, I refer you to Reference 2.")
                                 .font(Font.system(size: 14))
                                 .foregroundColor(Color.black)
                                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                            
                             
                         }
                         
@@ -117,11 +118,13 @@ struct AboutView: View {
                                 .foregroundColor(Color.black)
 
                             
-                            
+                            Text("2. AX=B matrix form; https://www.freetext.org/Introduction_to_Linear_Algebra/Systems_Linear_Equations/Ax_Equals_b/")
+                                .font( Font.system(size: 14))
+                                .foregroundColor(Color.black)
                             //                            Spacer()
                             //                        }
                             //                        HStack{
-                            Text("2. 3x3 Round-Off Verification Problem; https://www.rajgunesh.com/resources/downloads/numerical/gaussianelimination.pdf")
+                            Text("3. 3x3 Round-Off Verification Problem; https://www.rajgunesh.com/resources/downloads/numerical/gaussianelimination.pdf")
                                 .font( Font.system(size: 14))
                                 .foregroundColor(Color.black)
 
