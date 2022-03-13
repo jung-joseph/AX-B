@@ -18,7 +18,7 @@ struct EquationSection: View {
             HStack{
 //                MARK: - A Matrix
                 Group {  // A Matrix
-                    VStack{
+                    VStack(spacing: 0){
                         
                         Text("A")
                             .bold()
@@ -30,16 +30,23 @@ struct EquationSection: View {
                             
                             HStack{
                                 
-                                ForEach(0..<self.equations.neq) {
+                                MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                                
+                                ForEach(0..<self.equations.aMatrixText.count) {
                                     let j = $0
                                     
                                     
                                     TextField(self.equations.aMatrixText[i][j], text: $equations.aMatrixText[i][j])
+                                        .frame(width: 70, height: 20)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())//.padding()
+                                        .font(.custom("Arial", size: 15))
+                                        .fixedSize()
                                     // check for valid number here
                                     .foregroundColor(Double(self.equations.aMatrixText[i][j]) != nil ? Color.black : Color.red)
                                     .colorScheme(.light)
 
                                 }
+                                MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
                             }
                             
                         }
@@ -50,36 +57,48 @@ struct EquationSection: View {
                 
                 //                MARK: - *
 
-                Group{ // *
-                    VStack{
-                        Text("")
-                        
-                        ForEach(equations.fillerStarVector, id: \.self) { element in
-                            Text("\(element)")
-                        }
-                        //                        Text("*")
-                        Image(systemName: "multiply")
-                            .resizable()
-                            .frame(width: 10, height: 10)
-                    }
-                }
+//                Group{ // *
+//                    VStack{
+//                        Text("")
+//
+//                        ForEach(equations.fillerStarVector, id: \.self) { element in
+//                            Text("\(element)")
+//                        }
+//                        //                        Text("*")
+//                        Image(systemName: "multiply")
+//                            .resizable()
+//                            .frame(width: 10, height: 10)
+//                    }
+//                }
                 
                 
                 //                MARK: - X Matrix
 
                 Group {
                     
-                    VStack { // X Matrix
+                    VStack(spacing: 0) { // X Matrix
                         Text("X")
                             .bold()
                         
-                        ForEach(0..<self.equations.xMatrixText.count) {i in
-                            Text("\(self.equations.xMatrixText[i])")
+                       
+                           
                             
-                        }
-                        .padding([.top, .bottom], 8)
-                        .font(.custom("Arial", size: 15))
-                        .fixedSize()
+                            ForEach(0..<self.equations.xMatrixText.count) {
+                                let i = $0
+                                HStack {
+                                MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                                
+                                Text("\(self.equations.xMatrixText[i])")
+                                        .frame(width: 90, height: 20)
+                                        .font(.custom("Arial", size: 15))
+                                        .fixedSize()
+                                
+                                MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                                }
+                            }
+//                            .padding([.top, .bottom], 8)
+                            
+                       
                     }
                     
                 }
@@ -104,40 +123,55 @@ struct EquationSection: View {
                 //                MARK: - B Matrix
 
                 Group{
-                    VStack { // B Matrix
+                    VStack(spacing: 0) { // B Matrix
                         Text("B ")
                             .bold()
-                        ForEach(0..<self.equations.bMatrixText.count) {i in
-                            TextField(self.equations.bMatrixText[i], text: self.$equations.bMatrixText[i])
-                                .foregroundColor(Double(self.equations.bMatrixText[i]) != nil ? Color.black : Color.red)
-                                .colorScheme(.light)
+                        ForEach(0..<self.equations.bMatrixText.count) {
+                            let i = $0
+                            
+                            HStack{
+                                
+                                MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                                
+                                TextField(self.equations.bMatrixText[i], text: self.$equations.bMatrixText[i])
+                                    .frame(width: 60, height: 20)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .font(.custom("Arial", size: 15))
+                                    .fixedSize()
+                                    .foregroundColor(Double(self.equations.bMatrixText[i]) != nil ? Color.black : Color.red)
+                                    .colorScheme(.light)
 
-
+                                MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                            }
                         }
-//                        ForEach(0..<self.equations.bMatrixText.count) {i in
-//                            TextField(self.equations.bMatrixText[i], text: self.$equations.bMatrixText[i])
-//                                .foregroundColor(Double(self.equations.bMatrixText[i]) != nil ? Color.black : Color.red)
-//
-//                        }
+
                     }
-                }.textFieldStyle(RoundedBorderTextFieldStyle()).padding().font(.custom("Arial", size: 15)).fixedSize()
+                }
                 
                 
 //  MARK: - Error
                 Group { // Error
-                    VStack{
+                    VStack(spacing: 0){
                         Text("Error")
                             .bold()
                         
-                        ForEach(0..<self.system.error.count) { i in
+                        ForEach(0..<self.system.error.count) {
+                            let i = $0
                             
-                            Text("\(self.equations.errorText[i])")
-                            
-                            
+                            HStack{
+                                
+                                MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                                
+                                Text("\(self.equations.errorText[i])")
+                                    .frame(width: 80, height: 20)
+                                    .font(.custom("Arial", size: 15))
+                                    .fixedSize()
+                                
+                                MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                            }
                         }
-                        .padding([.top, .bottom], 8)
-                        .font(.custom("Arial", size: 15))
-                        .fixedSize()
+                        
+                        
                     }
                     
                     
