@@ -19,8 +19,8 @@ struct LeftSolveButtonSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             
-            Text("Select Method To").padding(.bottom, 1)
-            Text("Solve Problem:").padding(.bottom, 1)
+            Text("Select Solution Method:").padding(.bottom, 1)
+//            Text("Method:").padding(.bottom, 1)
 
             //MARK: - Gauss Elimination
             Button(action: {
