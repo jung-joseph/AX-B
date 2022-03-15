@@ -93,7 +93,7 @@ struct LeftSolveButtonSection: View {
                 showEquationView = true
                 
             }) {
-                Text("Maximal Column Pivoting")
+                Text("Maximal Column Pivot")
                     .padding(.horizontal, 4)
                 
             }.background(Color.green)
@@ -132,7 +132,7 @@ struct LeftSolveButtonSection: View {
                 
                 
             }) {
-                Text("Scaled Column-Pivot")
+                Text("Scaled Column Pivot")
                     .padding(.horizontal, 4)
                 
             }.background(Color.green)

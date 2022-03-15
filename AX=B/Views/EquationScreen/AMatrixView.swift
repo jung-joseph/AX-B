@@ -26,6 +26,8 @@ struct AMatrixView: View {
                         
                         HStack{
                             
+                            Spacer(minLength: 15)
+                            
                             MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
                             
                             ForEach(0..<self.equations.aMatrixText.count) {
