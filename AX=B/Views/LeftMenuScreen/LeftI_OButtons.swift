@@ -1,101 +1,40 @@
 //
-//  LeftMenuView.swift
-//  EquationSolver
+//  LeftI_OButtons.swift
+//  AX=B
 //
-//  Created by Joseph Jung on 2/9/22.
-//  Copyright © 2022 Joseph Jung. All rights reserved.
+//  Created by Joseph Jung on 3/14/22.
 //
 
 import SwiftUI
 
-struct LeftMenuView: View {
-    @Binding var showAbout: Bool
-    @Binding var showNewProblem: Bool
-    @Binding var showVerification: Bool
-    @Binding var showEquationView: Bool
+struct LeftI_OButtons: View {
     @Binding var neqText: String
-    @Binding var showDocumentPicker: Bool
-    @Binding var readFileContent: String
     @Binding var numEqsText: String
     @Binding var numEqs: Int
-    @Binding var showSettingsView: Bool
-    @Binding var numSigFigs: String
-    @Binding var isDarkMode: Bool
-    
-    
+    @Binding var showNewProblem: Bool
+    @Binding var readFileContent: String
+    @Binding var showVerification: Bool
+    @Binding var showEquationView: Bool
+    @Binding var showDocumentPicker: Bool
+
     @ObservedObject var equations: Equations
     @ObservedObject var system: Gauss
-    
+
     var body: some View {
-        VStack{
+        VStack(alignment: .leading) {
+            Text("Initiate Problem:")
             
-            
-// MARK:  - About
-            Button{
-                hideKeyboard()
-
-                showAbout = true
-            } label: {
-                Text("About")
-                    .padding(.horizontal, 4)
-            }
-            .sheet(isPresented: $showAbout) {
-                AboutView(showAbout: self.$showAbout)
-                    .preferredColorScheme(.light)
-                    .onDisappear{
-                        
-                    }
-            }
-            .background(Color.red)
-            .foregroundColor(Color.white)
-            .cornerRadius(10)
-            .shadow(radius: 10)
-            .padding()
-
-//MARK: - Settings
-                            Button(action:
-                                    {
-                                showSettingsView = true
-                                
-                            }) {
-                            Text("Settings")
-                                    .padding(.horizontal, 4)
-
-                        }
-                        .sheet(isPresented: $showSettingsView) {
-                            SettingsView(numSigFigs: $numSigFigs, showSettingsView: $showSettingsView, isDarkMode: $isDarkMode)
-                            
-                                .onDisappear {
-                                    //                                    print("in Start New Problem")
-                                    
-                                    
-                                    
-                                }
-                        }
-                        .background(Color.red)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 10)
-                        .padding()
-                        
-                        //
-                        
-            
-            
+            //MARK: - New Problem
+            Button(action:
+                    {
+                showNewProblem = true
+                showEquationView = false
                 
                 
-                
-//MARK: - New Problem
-                Button(action:
-                        {
-                    showNewProblem = true
-                    showEquationView = false
-                    
-                    
-                }) {
+            }) {
                 Text("Start New Problem")
-                        .padding(.horizontal, 4)
-
+                    .padding(.horizontal, 4)
+                
             }
             .sheet(isPresented: $showNewProblem) {
                 NewProblemView(neqText: $neqText, showNewProblem: $showNewProblem)
@@ -123,12 +62,12 @@ struct LeftMenuView: View {
             .foregroundColor(Color.white)
             .cornerRadius(10)
             .shadow(radius: 10)
-            .padding()
+            .padding(.bottom, 1)
             
             //
             
             
-//MARK: - Read in File
+            //MARK: - Load a Saved Problem
             
             Button(action: {
                 
@@ -141,7 +80,7 @@ struct LeftMenuView: View {
             }) {
                 Text("Load a Saved Problem")
                     .padding(.horizontal, 4)
-
+                
             }
             .sheet(isPresented: self.$showDocumentPicker) {
                 
@@ -163,10 +102,10 @@ struct LeftMenuView: View {
                             
                             //
                             //copy read object into current equation object
-//                            let tempEquations = Equations(neq: self.numEqs) // temp new equation object
+                            //                            let tempEquations = Equations(neq: self.numEqs) // temp new equation object
                             self.showEquationView = true
                             
-//                            equations.copyElements(newObject: tempEquations)
+                            //                            equations.copyElements(newObject: tempEquations)
                             
                             equations.copyElements(newObject: readInData)
                             
@@ -198,13 +137,13 @@ struct LeftMenuView: View {
             .foregroundColor(Color.white)
             .cornerRadius(10)
             .shadow(radius: 10)
-            .padding()
+            .padding(.bottom, 1)
             
             
             
             
             
-//MARK: - Load Verification Problems
+            //MARK: - Load Verification Problems
             
             
             Button {
@@ -227,18 +166,19 @@ struct LeftMenuView: View {
             .foregroundColor(Color.white)
             .cornerRadius(10)
             .shadow(radius: 10)
-            .padding()
+            .padding(.bottom, 5)
             
-
             
-
-            Spacer()
-        } // VStack
+//            Image(systemName: "arrow.down")
+//                .resizable()
+//                .frame(width: 15, height: 15, alignment: .topLeading)
+//                .foregroundColor(.black)
+        }
     }
 }
 
-struct LeftMenuView_Previews: PreviewProvider {
+struct LeftI_OButtons_Previews: PreviewProvider {
     static var previews: some View {
-        LeftMenuView(showAbout: .constant(false), showNewProblem: .constant(false), showVerification: .constant(false), showEquationView: .constant(false), neqText: .constant("2"), showDocumentPicker: .constant(false), readFileContent: .constant(" "), numEqsText: .constant("2"), numEqs: .constant(2), showSettingsView: .constant(false), numSigFigs: .constant("3"), isDarkMode: .constant(false), equations: Equations(neq: 2), system: Gauss(neq: 2))
+        LeftI_OButtons(neqText: .constant("2"), numEqsText: .constant("2"),numEqs: .constant(2),showNewProblem: .constant(false), readFileContent: .constant(""), showVerification: .constant(false), showEquationView: .constant(false), showDocumentPicker: .constant(false), equations: Equations(neq: 2), system: Gauss(neq: 2))
     }
 }

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SolveButtonSection: View {
+struct BottomSolveButtonSection: View {
     @ObservedObject var equations: Equations
     @ObservedObject var system: Gauss
     @Binding var showFileNamer: Bool
@@ -245,9 +245,9 @@ struct SolveButtonSection: View {
     }
 }
 
-struct SolveButtonSection_Previews: PreviewProvider {
+struct BottomSolveButtonSection_Previews: PreviewProvider {
     static var previews: some View {
-        SolveButtonSection(equations: Equations(neq: 1), system: Gauss(neq: 1), showFileNamer: .constant(false), filename: .constant(""), showEquationView: .constant(true), numSigFigs: .constant("4"))
+        BottomSolveButtonSection(equations: Equations(neq: 1), system: Gauss(neq: 1), showFileNamer: .constant(false), filename: .constant(""), showEquationView: .constant(true), numSigFigs: .constant("4"))
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53BC104527DE60010000B1DD /* MatrixBracketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC104427DE60010000B1DD /* MatrixBracketView.swift */; };
+		53BC104727DF8FBA0000B1DD /* LeftSolveBottomSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC104627DF8FBA0000B1DD /* LeftSolveBottomSection.swift */; };
 		53C9499927D4299E006C38B7 /* AX_BApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9499827D4299E006C38B7 /* AX_BApp.swift */; };
 		53C9499D27D429A0006C38B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C9499C27D429A0006C38B7 /* Assets.xcassets */; };
 		53C949A027D429A0006C38B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C9499F27D429A0006C38B7 /* Preview Assets.xcassets */; };
@@ -15,9 +16,9 @@
 		53C949CC27D42C38006C38B7 /* Gauss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949CB27D42C38006C38B7 /* Gauss.swift */; };
 		53C949CE27D42C64006C38B7 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949CD27D42C64006C38B7 /* AboutView.swift */; };
 		53C949D227D42C6C006C38B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D127D42C6C006C38B7 /* ContentView.swift */; };
-		53C949D427D42C7C006C38B7 /* EquationSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D327D42C7C006C38B7 /* EquationSection.swift */; };
+		53C949D427D42C7C006C38B7 /* EquationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D327D42C7C006C38B7 /* EquationScreen.swift */; };
 		53C949D627D42C7F006C38B7 /* EquationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D527D42C7F006C38B7 /* EquationsView.swift */; };
-		53C949D827D42C84006C38B7 /* SolveButtonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D727D42C84006C38B7 /* SolveButtonSection.swift */; };
+		53C949D827D42C84006C38B7 /* BottomSolveButtonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D727D42C84006C38B7 /* BottomSolveButtonSection.swift */; };
 		53C949DA27D42C94006C38B7 /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949D927D42C93006C38B7 /* LeftMenuView.swift */; };
 		53C949DC27D42C98006C38B7 /* NewProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949DB27D42C98006C38B7 /* NewProblemView.swift */; };
 		53C949DE27D42C9E006C38B7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949DD27D42C9E006C38B7 /* SettingsView.swift */; };
@@ -26,10 +27,17 @@
 		53C949E427D42CC9006C38B7 /* ProjectRoutines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949E327D42CC9006C38B7 /* ProjectRoutines.swift */; };
 		53C949E627D42CD2006C38B7 /* VerificationProblems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949E527D42CD2006C38B7 /* VerificationProblems.swift */; };
 		53C949ED27D42E84006C38B7 /* FileNamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C949EC27D42E84006C38B7 /* FileNamer.swift */; };
+		53DB10F027DFA602001FB2D6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10EF27DFA602001FB2D6 /* ErrorView.swift */; };
+		53DB10F227DFB6FD001FB2D6 /* AMatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10F127DFB6FD001FB2D6 /* AMatrixView.swift */; };
+		53DB10F427DFB8C5001FB2D6 /* XVectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10F327DFB8C5001FB2D6 /* XVectorView.swift */; };
+		53DB10F627DFBB8F001FB2D6 /* BVectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10F527DFBB8F001FB2D6 /* BVectorView.swift */; };
+		53DB10F827DFBDFB001FB2D6 /* EqualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10F727DFBDFB001FB2D6 /* EqualView.swift */; };
+		53DB10FA27E00CF8001FB2D6 /* LeftI_OButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10F927E00CF8001FB2D6 /* LeftI_OButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		53BC104427DE60010000B1DD /* MatrixBracketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixBracketView.swift; sourceTree = "<group>"; };
+		53BC104627DF8FBA0000B1DD /* LeftSolveBottomSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSolveBottomSection.swift; sourceTree = "<group>"; };
 		53C9499527D4299E006C38B7 /* AX=B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AX=B.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C9499827D4299E006C38B7 /* AX_BApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AX_BApp.swift; sourceTree = "<group>"; };
 		53C9499C27D429A0006C38B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,9 +46,9 @@
 		53C949CB27D42C38006C38B7 /* Gauss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauss.swift; sourceTree = "<group>"; };
 		53C949CD27D42C64006C38B7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		53C949D127D42C6C006C38B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		53C949D327D42C7C006C38B7 /* EquationSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationSection.swift; sourceTree = "<group>"; };
+		53C949D327D42C7C006C38B7 /* EquationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationScreen.swift; sourceTree = "<group>"; };
 		53C949D527D42C7F006C38B7 /* EquationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationsView.swift; sourceTree = "<group>"; };
-		53C949D727D42C84006C38B7 /* SolveButtonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveButtonSection.swift; sourceTree = "<group>"; };
+		53C949D727D42C84006C38B7 /* BottomSolveButtonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSolveButtonSection.swift; sourceTree = "<group>"; };
 		53C949D927D42C93006C38B7 /* LeftMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
 		53C949DB27D42C98006C38B7 /* NewProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProblemView.swift; sourceTree = "<group>"; };
 		53C949DD27D42C9E006C38B7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -51,6 +59,12 @@
 		53C949EC27D42E84006C38B7 /* FileNamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNamer.swift; sourceTree = "<group>"; };
 		53C949F427D4322E006C38B7 /* AX=B.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AX=B.entitlements"; sourceTree = "<group>"; };
 		53C949F527D4356A006C38B7 /* AX-B-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "AX-B-Info.plist"; sourceTree = SOURCE_ROOT; };
+		53DB10EF27DFA602001FB2D6 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		53DB10F127DFB6FD001FB2D6 /* AMatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMatrixView.swift; sourceTree = "<group>"; };
+		53DB10F327DFB8C5001FB2D6 /* XVectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XVectorView.swift; sourceTree = "<group>"; };
+		53DB10F527DFBB8F001FB2D6 /* BVectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BVectorView.swift; sourceTree = "<group>"; };
+		53DB10F727DFBDFB001FB2D6 /* EqualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualView.swift; sourceTree = "<group>"; };
+		53DB10F927E00CF8001FB2D6 /* LeftI_OButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftI_OButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +101,6 @@
 				53C949F427D4322E006C38B7 /* AX=B.entitlements */,
 				53C9499827D4299E006C38B7 /* AX_BApp.swift */,
 				53C949EA27D42DF3006C38B7 /* Views */,
-				53C949EB27D42E1B006C38B7 /* EquationScreen */,
 				53C949EE27D42E99006C38B7 /* MainViewModel */,
 				53C949F127D42F46006C38B7 /* Model */,
 				53C949F227D42F6C006C38B7 /* VerificationProblems */,
@@ -111,12 +124,13 @@
 			children = (
 				53C949CD27D42C64006C38B7 /* AboutView.swift */,
 				53C949D127D42C6C006C38B7 /* ContentView.swift */,
-				53C949D727D42C84006C38B7 /* SolveButtonSection.swift */,
-				53C949D927D42C93006C38B7 /* LeftMenuView.swift */,
+				53C949D727D42C84006C38B7 /* BottomSolveButtonSection.swift */,
 				53C949DB27D42C98006C38B7 /* NewProblemView.swift */,
 				53C949DD27D42C9E006C38B7 /* SettingsView.swift */,
 				53C949EC27D42E84006C38B7 /* FileNamer.swift */,
 				53C949DF27D42CA2006C38B7 /* VerificationProblemsView.swift */,
+				53C949EB27D42E1B006C38B7 /* EquationScreen */,
+				53DB10FB27E02D6C001FB2D6 /* LeftMenuScreen */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,9 +138,14 @@
 		53C949EB27D42E1B006C38B7 /* EquationScreen */ = {
 			isa = PBXGroup;
 			children = (
-				53C949D327D42C7C006C38B7 /* EquationSection.swift */,
+				53C949D327D42C7C006C38B7 /* EquationScreen.swift */,
 				53C949D527D42C7F006C38B7 /* EquationsView.swift */,
 				53BC104427DE60010000B1DD /* MatrixBracketView.swift */,
+				53DB10EF27DFA602001FB2D6 /* ErrorView.swift */,
+				53DB10F127DFB6FD001FB2D6 /* AMatrixView.swift */,
+				53DB10F327DFB8C5001FB2D6 /* XVectorView.swift */,
+				53DB10F527DFBB8F001FB2D6 /* BVectorView.swift */,
+				53DB10F727DFBDFB001FB2D6 /* EqualView.swift */,
 			);
 			path = EquationScreen;
 			sourceTree = "<group>";
@@ -162,6 +181,16 @@
 				53C949E127D42CC5006C38B7 /* DocumentPickerFiles.swift */,
 			);
 			path = HelperRoutines;
+			sourceTree = "<group>";
+		};
+		53DB10FB27E02D6C001FB2D6 /* LeftMenuScreen */ = {
+			isa = PBXGroup;
+			children = (
+				53C949D927D42C93006C38B7 /* LeftMenuView.swift */,
+				53DB10F927E00CF8001FB2D6 /* LeftI_OButtons.swift */,
+				53BC104627DF8FBA0000B1DD /* LeftSolveBottomSection.swift */,
+			);
+			path = LeftMenuScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,20 +265,27 @@
 			files = (
 				53C949CE27D42C64006C38B7 /* AboutView.swift in Sources */,
 				53C949E027D42CA2006C38B7 /* VerificationProblemsView.swift in Sources */,
+				53DB10F027DFA602001FB2D6 /* ErrorView.swift in Sources */,
 				53C949CC27D42C38006C38B7 /* Gauss.swift in Sources */,
 				53C949D627D42C7F006C38B7 /* EquationsView.swift in Sources */,
 				53C949D227D42C6C006C38B7 /* ContentView.swift in Sources */,
 				53BC104527DE60010000B1DD /* MatrixBracketView.swift in Sources */,
 				53C9499927D4299E006C38B7 /* AX_BApp.swift in Sources */,
+				53DB10FA27E00CF8001FB2D6 /* LeftI_OButtons.swift in Sources */,
 				53C949B027D42B3C006C38B7 /* Equations.swift in Sources */,
-				53C949D427D42C7C006C38B7 /* EquationSection.swift in Sources */,
-				53C949D827D42C84006C38B7 /* SolveButtonSection.swift in Sources */,
+				53DB10F227DFB6FD001FB2D6 /* AMatrixView.swift in Sources */,
+				53C949D427D42C7C006C38B7 /* EquationScreen.swift in Sources */,
+				53C949D827D42C84006C38B7 /* BottomSolveButtonSection.swift in Sources */,
 				53C949DA27D42C94006C38B7 /* LeftMenuView.swift in Sources */,
+				53BC104727DF8FBA0000B1DD /* LeftSolveBottomSection.swift in Sources */,
 				53C949DE27D42C9E006C38B7 /* SettingsView.swift in Sources */,
 				53C949E627D42CD2006C38B7 /* VerificationProblems.swift in Sources */,
 				53C949ED27D42E84006C38B7 /* FileNamer.swift in Sources */,
 				53C949E227D42CC6006C38B7 /* DocumentPickerFiles.swift in Sources */,
+				53DB10F627DFBB8F001FB2D6 /* BVectorView.swift in Sources */,
 				53C949DC27D42C98006C38B7 /* NewProblemView.swift in Sources */,
+				53DB10F427DFB8C5001FB2D6 /* XVectorView.swift in Sources */,
+				53DB10F827DFBDFB001FB2D6 /* EqualView.swift in Sources */,
 				53C949E427D42CC9006C38B7 /* ProjectRoutines.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

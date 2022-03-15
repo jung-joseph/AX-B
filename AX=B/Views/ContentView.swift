@@ -57,7 +57,7 @@ struct ContentView: View {
                 
                 
                 HStack{
-                    LeftMenuView(showAbout: $showAbout, showNewProblem: $showNewProblem, showVerification: $showVerification, showEquationView: $showEquationView, neqText: $neqText, showDocumentPicker: $showDocumentPicker, readFileContent: $readFileContent, numEqsText: $numEqsText, numEqs: $numEqs, showSettingsView: $showSettingsView, numSigFigs: $numSigFigs,isDarkMode: $isDarkMode, equations: equations, system: system)
+                    LeftMenuView(showAbout: $showAbout, showNewProblem: $showNewProblem, showVerification: $showVerification, showEquationView: $showEquationView, neqText: $neqText, showDocumentPicker: $showDocumentPicker, readFileContent: $readFileContent, numEqsText: $numEqsText, numEqs: $numEqs, showSettingsView: $showSettingsView, numSigFigs: $numSigFigs,isDarkMode: $isDarkMode,showFileNamer: $showFileNamer, filename: $filename, equations: equations, system: system)
 
                     
                     //                Mark:  EquationView

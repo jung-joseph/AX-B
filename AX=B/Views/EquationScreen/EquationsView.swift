@@ -15,8 +15,6 @@ struct EquationsView: View {
     
     @State var showFileNamer = false
     @State var filename = ""
-    //    @State var operationMessage: String = ""
-    //    @State var showOperationMessage: Bool = false
     
     @Binding var showEquationView: Bool
     @Binding var numSigFigs: String
@@ -26,17 +24,18 @@ struct EquationsView: View {
         
         VStack{
             
-            EquationSection(equations: equations, system: system, numSigFigs: $numSigFigs)
+            EquationScreen(equations: equations, system: system, numSigFigs: $numSigFigs)
             
             // solver message
-            HStack{
-                
+            HStack(){
+                Spacer()
                 Text("Solver Messages: ")
                 Text("\(self.system.solverMessage)").foregroundColor(.red)
-                
+                Spacer()
+                Spacer()
             }
             
-            SolveButtonSection(equations: equations, system: system, showFileNamer: $showFileNamer, filename: $filename, showEquationView: $showEquationView, numSigFigs: $numSigFigs)
+//            BottomSolveButtonSection(equations: equations, system: system, showFileNamer: $showFileNamer, filename: $filename, showEquationView: $showEquationView, numSigFigs: $numSigFigs)
             
             
             
