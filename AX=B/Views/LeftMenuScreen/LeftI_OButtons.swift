@@ -41,7 +41,7 @@ struct LeftI_OButtons: View {
                 
                     .onDisappear {
                         //                                    print("in Start New Problem")
-                        
+                        // create a new problem
                         self.numEqsText = neqText
                         self.numEqs = Int(self.numEqsText) ?? 0
                         self.showEquationView = true
@@ -154,7 +154,8 @@ struct LeftI_OButtons: View {
                     .padding(.horizontal, 4)
             }
             .sheet(isPresented: $showVerification) {
-                VerificationProblemsView(showVerification: $showVerification, showEquationView: $showEquationView, equations: equations, system: system)
+                
+                VerificationProblemsView(numEqs:$numEqs,numEqsText: $neqText,showVerification: $showVerification, showEquationView: $showEquationView, equations: equations, system: system)
                 
                     .onDisappear {
                         showVerification = false

@@ -131,6 +131,9 @@ struct AboutView: View {
                             
                             //                            Spacer()
                             //                        }
+                            Text("4. Hilbert Matrices; https://nhigham.com/2020/06/30/what-is-the-hilbert-matrix/")
+                                .font( Font.system(size: 14))
+                                .foregroundColor(Color.black)
                         }
                     }
                     VStack{
