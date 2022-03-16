@@ -15,7 +15,7 @@ struct ErrorView: View {
         Group { // Error
             VStack(spacing: 0){
                 
-                        Text("Error")
+                        Text("Residual(B-AX)")
                             .bold()
                 
                 ForEach(0..<self.system.error.count) {
