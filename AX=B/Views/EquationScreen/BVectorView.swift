@@ -15,7 +15,7 @@ struct BVectorView: View {
             VStack(spacing: 0) { // B Matrix
                 Text("B ")
                     .bold()
-                ForEach(0..<self.equations.bMatrixText.count) {
+                ForEach(0..<self.equations.bMatrixText.count, id: \.self) {
                     let i = $0
                     
                     HStack{

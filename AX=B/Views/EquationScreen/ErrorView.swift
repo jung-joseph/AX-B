@@ -18,7 +18,7 @@ struct ErrorView: View {
                         Text("Error")
                             .bold()
                 
-                ForEach(0..<self.system.error.count) {
+                ForEach(0..<self.system.error.count, id: \.self) {
                     let i = $0
 
                     HStack{

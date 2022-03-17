@@ -20,7 +20,7 @@ struct XVectorView: View {
                
                    
                     
-                    ForEach(0..<self.equations.xMatrixText.count) {
+                    ForEach(0..<self.equations.xMatrixText.count, id: \.self) {
                         let i = $0
                         HStack {
                         MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
