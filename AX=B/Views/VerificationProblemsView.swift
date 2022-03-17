@@ -10,12 +10,17 @@ import SwiftUI
 
 struct VerificationProblemsView: View {
     
+    @Binding var numEqs: Int
+    @Binding var numEqsText: String
     @Binding var showVerification: Bool
     @Binding var showEquationView: Bool
     
     @ObservedObject var verificationProblems = VerificationProblems()
     @ObservedObject var equations: Equations
     @ObservedObject var system: Gauss
+    
+    @State var showHilbert: Bool = false
+    @State var hilbertSizeText: String = "2"
     
     var body: some View {
         VStack{
@@ -166,6 +171,7 @@ struct VerificationProblemsView: View {
                     .cornerRadius(10)
                     .shadow(radius: 10)
                     .padding()
+                    
                     Button("Load Problem 4x4#2 (NoSolution)"){
                         let verificationProblem = verificationProblems.noSolution4x4
                         
@@ -201,7 +207,26 @@ struct VerificationProblemsView: View {
                     Spacer()
                     Spacer()
                 }
-                
+                VStack {
+                    
+                    Button{
+                        self.showHilbert = true
+                    } label: {
+                        Text("Hilbert Matrices Ref. 4")
+                            .padding(.horizontal, 4)
+                    }
+                    .sheet(isPresented: $showHilbert) {
+                        
+                        HilbertView(equations: equations, system: system, showHilbert: $showHilbert, hilbertSizeText: $hilbertSizeText,numEqsText: $numEqsText,numEqs: $numEqs, showEquationView: $showEquationView,showVerification: $showVerification)
+                    }
+                .background(Color.red)
+                .foregroundColor(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 10)
+                .padding()
+                    
+                    Spacer()
+                }
             }
         }
         
@@ -272,6 +297,7 @@ struct VerificationProblemsView: View {
 
 struct VerificationProblemsView_Previews: PreviewProvider {
     static var previews: some View {
-        VerificationProblemsView( showVerification: .constant(true), showEquationView: .constant(true), equations: Equations(neq: 1), system: Gauss(neq: 1))
+        
+        VerificationProblemsView( numEqs:.constant(2),numEqsText: .constant("2"),showVerification: .constant(true), showEquationView: .constant(true), equations: Equations(neq: 2), system: Gauss(neq: 2))
     }
 }

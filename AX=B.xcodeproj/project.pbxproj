@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53451C4727E160680086547F /* HilbertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53451C4627E160680086547F /* HilbertView.swift */; };
+		53451C4927E17DE40086547F /* HilbertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53451C4827E17DE40086547F /* HilbertViewModel.swift */; };
 		53BC104527DE60010000B1DD /* MatrixBracketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC104427DE60010000B1DD /* MatrixBracketView.swift */; };
 		53BC104727DF8FBA0000B1DD /* LeftSolveBottomSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC104627DF8FBA0000B1DD /* LeftSolveBottomSection.swift */; };
 		53C9499927D4299E006C38B7 /* AX_BApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9499827D4299E006C38B7 /* AX_BApp.swift */; };
@@ -33,9 +35,12 @@
 		53DB10F627DFBB8F001FB2D6 /* BVectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10F527DFBB8F001FB2D6 /* BVectorView.swift */; };
 		53DB10F827DFBDFB001FB2D6 /* EqualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10F727DFBDFB001FB2D6 /* EqualView.swift */; };
 		53DB10FA27E00CF8001FB2D6 /* LeftI_OButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10F927E00CF8001FB2D6 /* LeftI_OButtons.swift */; };
+		53DB10FD27E11C6A001FB2D6 /* HilbertMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DB10FC27E11C6A001FB2D6 /* HilbertMatrix.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53451C4627E160680086547F /* HilbertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilbertView.swift; sourceTree = "<group>"; };
+		53451C4827E17DE40086547F /* HilbertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilbertViewModel.swift; sourceTree = "<group>"; };
 		53BC104427DE60010000B1DD /* MatrixBracketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixBracketView.swift; sourceTree = "<group>"; };
 		53BC104627DF8FBA0000B1DD /* LeftSolveBottomSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSolveBottomSection.swift; sourceTree = "<group>"; };
 		53C9499527D4299E006C38B7 /* AX=B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AX=B.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +70,7 @@
 		53DB10F527DFBB8F001FB2D6 /* BVectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BVectorView.swift; sourceTree = "<group>"; };
 		53DB10F727DFBDFB001FB2D6 /* EqualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualView.swift; sourceTree = "<group>"; };
 		53DB10F927E00CF8001FB2D6 /* LeftI_OButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftI_OButtons.swift; sourceTree = "<group>"; };
+		53DB10FC27E11C6A001FB2D6 /* HilbertMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilbertMatrix.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 				53C949DD27D42C9E006C38B7 /* SettingsView.swift */,
 				53C949EC27D42E84006C38B7 /* FileNamer.swift */,
 				53C949DF27D42CA2006C38B7 /* VerificationProblemsView.swift */,
+				53451C4627E160680086547F /* HilbertView.swift */,
 				53C949EB27D42E1B006C38B7 /* EquationScreen */,
 				53DB10FB27E02D6C001FB2D6 /* LeftMenuScreen */,
 			);
@@ -154,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				53C949AB27D42A23006C38B7 /* Equations.swift */,
+				53451C4827E17DE40086547F /* HilbertViewModel.swift */,
 			);
 			path = MainViewModel;
 			sourceTree = "<group>";
@@ -162,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				53C949CB27D42C38006C38B7 /* Gauss.swift */,
+				53DB10FC27E11C6A001FB2D6 /* HilbertMatrix.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,6 +281,7 @@
 				53BC104527DE60010000B1DD /* MatrixBracketView.swift in Sources */,
 				53C9499927D4299E006C38B7 /* AX_BApp.swift in Sources */,
 				53DB10FA27E00CF8001FB2D6 /* LeftI_OButtons.swift in Sources */,
+				53451C4727E160680086547F /* HilbertView.swift in Sources */,
 				53C949B027D42B3C006C38B7 /* Equations.swift in Sources */,
 				53DB10F227DFB6FD001FB2D6 /* AMatrixView.swift in Sources */,
 				53C949D427D42C7C006C38B7 /* EquationScreen.swift in Sources */,
@@ -279,7 +289,9 @@
 				53C949DA27D42C94006C38B7 /* LeftMenuView.swift in Sources */,
 				53BC104727DF8FBA0000B1DD /* LeftSolveBottomSection.swift in Sources */,
 				53C949DE27D42C9E006C38B7 /* SettingsView.swift in Sources */,
+				53451C4927E17DE40086547F /* HilbertViewModel.swift in Sources */,
 				53C949E627D42CD2006C38B7 /* VerificationProblems.swift in Sources */,
+				53DB10FD27E11C6A001FB2D6 /* HilbertMatrix.swift in Sources */,
 				53C949ED27D42E84006C38B7 /* FileNamer.swift in Sources */,
 				53C949E227D42CC6006C38B7 /* DocumentPickerFiles.swift in Sources */,
 				53DB10F627DFBB8F001FB2D6 /* BVectorView.swift in Sources */,

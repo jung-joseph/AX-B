@@ -13,6 +13,7 @@ struct AMatrixView: View {
     var body: some View {
         
 //                MARK: - A Matrix
+        
             Group {  // A Matrix
                 VStack(spacing: 0){
                     
@@ -21,7 +22,7 @@ struct AMatrixView: View {
                     
                     
                     
-                    ForEach(0..<self.equations.aMatrixText.count){
+                    ForEach(0..<self.equations.aMatrixText.count, id: \.self){
                         let i = $0
                         
                         HStack{
@@ -30,7 +31,7 @@ struct AMatrixView: View {
                             
                             MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
                             
-                            ForEach(0..<self.equations.aMatrixText.count) {
+                            ForEach(0..<self.equations.aMatrixText.count, id: \.self) {
                                 let j = $0
                                 
                                 

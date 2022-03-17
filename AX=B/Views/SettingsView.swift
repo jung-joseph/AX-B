@@ -52,7 +52,7 @@ struct SettingsView: View {
                     self.showSettingsView = false
                     // check for validity of numSigFig and make sure it is >= 2
                     if let numDigits = Int(numSigFigs){
-                        if numDigits > 1 {
+                        if numDigits > 1 && numDigits < 6 {
                             return
                         } else {
                             numSigFigs = "2"
