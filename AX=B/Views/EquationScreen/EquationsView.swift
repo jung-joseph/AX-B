@@ -27,6 +27,7 @@ struct EquationsView: View {
             EquationScreen(equations: equations, system: system, numSigFigs: $numSigFigs)
             
             // solver message
+            VStack(alignment:.leading){
             HStack(){
                 Spacer()
                 Text("Solver Messages: ")
@@ -34,7 +35,15 @@ struct EquationsView: View {
                 Spacer()
                 Spacer()
             }
-            
+                HStack{
+                    Spacer()
+                if(self.system.kNum != "0"){
+                    Text("Condition Number Estimate: \(self.system.kNum)")
+                }
+                    Spacer()
+                    Spacer()
+                }
+            }
 //            BottomSolveButtonSection(equations: equations, system: system, showFileNamer: $showFileNamer, filename: $filename, showEquationView: $showEquationView, numSigFigs: $numSigFigs)
             
             

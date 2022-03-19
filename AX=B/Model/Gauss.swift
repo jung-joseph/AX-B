@@ -15,9 +15,11 @@ class Gauss: ObservableObject {
     var matrixCopy = [[Double]]()
     var bCopy = [Double]()
     
+    
     @Published var x = [Double]()
     @Published var error = [Double]()
     @Published var solverMessage: String = ""
+    @Published var kNum: String = "0"
     
     init(neq: Int) {
         
@@ -38,17 +40,17 @@ class Gauss: ObservableObject {
     }
     
     //Mark: - Object copy
-        func copyElements(newObject: Gauss) {
-            
-            self.neq = newObject.neq
-            self.matrix = newObject.matrix
-            self.matrixCopy = newObject.matrixCopy
-            self.bCopy = newObject.bCopy
-            self.x = newObject.x
-            self.error = newObject.error
-            self.solverMessage = newObject.solverMessage
-          
-        }
+    func copyElements(newObject: Gauss) {
+        
+        self.neq = newObject.neq
+        self.matrix = newObject.matrix
+        self.matrixCopy = newObject.matrixCopy
+        self.bCopy = newObject.bCopy
+        self.x = newObject.x
+        self.error = newObject.error
+        self.solverMessage = newObject.solverMessage
+        
+    }
     
     
     func printGaussObject(){
@@ -75,7 +77,7 @@ class Gauss: ObservableObject {
             print(" ")
         }
         
-
+        
         print()
     }
     
@@ -90,7 +92,7 @@ class Gauss: ObservableObject {
             print(" ")
         }
         
-
+        
         print()
     }
     func printBVector() {
@@ -106,7 +108,7 @@ class Gauss: ObservableObject {
         print("The B Matrix Copy")
         
         for value in bCopy {
-                print(value, terminator: " ")
+            print(value, terminator: " ")
             print(" ")
         }
         print()
@@ -116,7 +118,7 @@ class Gauss: ObservableObject {
         print("The X Matrix")
         
         for value in x {
-                print(value, terminator: " ")
+            print(value, terminator: " ")
             print(" ")
         }
         print()
@@ -126,7 +128,7 @@ class Gauss: ObservableObject {
         print("The Error")
         
         for value in error {
-                print(value, terminator: " ")
+            print(value, terminator: " ")
             print(" ")
         }
         print()
@@ -169,7 +171,7 @@ class Gauss: ObservableObject {
             x[0] = matrix[0][neq]/matrix[0][0]
             solverMessage = "SCPSolve: Solution Found"
             
-//            residual()
+            //            residual()
             
             return true
         }
@@ -251,10 +253,10 @@ class Gauss: ObservableObject {
         
         
         solverMessage = "SCPSolve: Solution Found"
-//        residual()
+        //        residual()
         return true
     }
-
+    
     
     @discardableResult func gaussMCPSolve() -> Bool {
         // Gauss Elimination with Maximal Column Pivoting
@@ -287,7 +289,7 @@ class Gauss: ObservableObject {
             }
             x[0] = matrix[0][neq]/matrix[0][0]
             solverMessage = "MCPSolve: Solution Found"
-//            residual()
+            //            residual()
             return true
         }
         
@@ -357,7 +359,7 @@ class Gauss: ObservableObject {
         
         
         solverMessage = "MCPSolve: Solution Found"
-//        residual()
+        //        residual()
         return true
     }
     
@@ -372,12 +374,12 @@ class Gauss: ObservableObject {
         var product : Double
         let smallNumber: Double = 1.0e-15
         var nRow:[Int] = Array(repeating: 0, count: neq)
-//        var nCopy: Int
+        //        var nCopy: Int
         
         // copy original matrix for later error calculations
         for i in 0..<neq {
             for j in 0..<neq {
-//                print("gaussSolve \(i) \(j)")
+                //                print("gaussSolve \(i) \(j)")
                 matrixCopy[i][j] = matrix[i][j]
             }
             bCopy[i] = matrix[i][neq]
@@ -392,7 +394,7 @@ class Gauss: ObservableObject {
             }
             x[0] = matrix[0][neq]/matrix[0][0]
             solverMessage = "GaussSolve: Solution Found"
-//            residual()
+            //            residual()
             return true
         }
         
@@ -404,66 +406,66 @@ class Gauss: ObservableObject {
         }
         
         // Forward Elimination
-       
-            for i in 0...neq-2 {
+        
+        for i in 0...neq-2 {
+            
+            var p = -1
+            for j in i..<neq {
+                //                for j in i..<neq {
                 
-                var p = -1
-                for j in i..<neq {
-                    //                for j in i..<neq {
-                    
-                    if abs(matrix[nRow[j]][i]) > smallNumber {
-                        p = j
-                        break
-                    }
-                }
-                if(p == -1) {
-                    solverMessage = "GaussSolve: No Unique Solution or Possible Poorly Conditioned System"
-                    return false
-                }
-                
-//                // Perform row interchange, if necessary
-//                if p != i {
-////                    print("Gauss: interchanging rows \(p) for \(i)")
-//                    nCopy = nRow[i]
-//                    nRow[i] = nRow[p]
-//                    nRow[p] = nCopy
-//                }
-                
-                for j in i+1...neq-1 {
-                    
-                    if abs(matrix[nRow[i]][i]) < smallNumber {
-                        solverMessage = "GaussSolve: Poorly Conditioned System - Zero or Near Zero Pivot"
-                        return false
-                    }
-                    factor = matrix[nRow[j]][i]/matrix[nRow[i]][i]
-                    for jj in i...neq {
-                        matrix[nRow[j]][jj] = matrix[nRow[j]][jj] - (factor *  matrix[nRow[i]][jj])
-                    }
-                    
+                if abs(matrix[nRow[j]][i]) > smallNumber {
+                    p = j
+                    break
                 }
             }
-            
-            if abs(matrix[nRow[neq-1]][neq-1]) < smallNumber {
-                solverMessage = "GaussSolve: No Unique Solution - Zero in Last Pivot"
+            if(p == -1) {
+                solverMessage = "GaussSolve: No Unique Solution or Possible Poorly Conditioned System"
                 return false
             }
+            
+            //                // Perform row interchange, if necessary
+            //                if p != i {
+            ////                    print("Gauss: interchanging rows \(p) for \(i)")
+            //                    nCopy = nRow[i]
+            //                    nRow[i] = nRow[p]
+            //                    nRow[p] = nCopy
+            //                }
+            
+            for j in i+1...neq-1 {
+                
+                if abs(matrix[nRow[i]][i]) < smallNumber {
+                    solverMessage = "GaussSolve: Poorly Conditioned System - Zero or Near Zero Pivot"
+                    return false
+                }
+                factor = matrix[nRow[j]][i]/matrix[nRow[i]][i]
+                for jj in i...neq {
+                    matrix[nRow[j]][jj] = matrix[nRow[j]][jj] - (factor *  matrix[nRow[i]][jj])
+                }
+                
+            }
+        }
+        
+        if abs(matrix[nRow[neq-1]][neq-1]) < smallNumber {
+            solverMessage = "GaussSolve: No Unique Solution - Zero in Last Pivot"
+            return false
+        }
         
         // Back Substituion
         
         x[neq-1] = matrix[nRow[neq-1]][neq]/matrix[nRow[neq-1]][neq-1]
         
         
-            for i in stride(from: neq-2, through: 0, by: -1){
-                sum = 0.0
-                for j in i+1...neq-1 {
-                    product = matrix[nRow[i]][j] * x[j]
-                    sum = sum - product
-                }
-                x[i] = (matrix[nRow[i]][neq] + sum)/matrix[nRow[i]][i]
+        for i in stride(from: neq-2, through: 0, by: -1){
+            sum = 0.0
+            for j in i+1...neq-1 {
+                product = matrix[nRow[i]][j] * x[j]
+                sum = sum - product
             }
+            x[i] = (matrix[nRow[i]][neq] + sum)/matrix[nRow[i]][i]
+        }
         
         solverMessage = "GaussSolve: Solution Found"
-//        residual()
+        //        residual()
         return true
     }
     
@@ -487,11 +489,45 @@ class Gauss: ObservableObject {
             for j in 0..<neq {
                 error[i] = error[i] + matrixCopy[i][j] * x[j]
             }
-            error[i] = error[i] - bCopy[i]
+            error[i] = bCopy[i] - error[i]
         }
         
         return error
     }
+    
+    func kNumber(residualSolutionVector: [Double], xSolutionVector: [Double]){
+//        compute an estimate for the Condition Number of a Matrix
+        
+        kNum = "0"
+        
+        let t = 15.0 // Double precision number
+        
+        let rSVNorm = vectorInfNorm(vector: residualSolutionVector)
+        print("\(rSVNorm)")
+        let xSVNorm = vectorInfNorm(vector: xSolutionVector)
+        print("\(xSVNorm)")
+
+        if xSVNorm == 0.0 {
+            kNum = "Unable to compute"
+            
+        } else {
+            kNum = String(Int(pow(10.0,t) * (rSVNorm / xSVNorm)))
+            
+        }
+    }
+    
+    func vectorInfNorm(vector: [Double])-> Double {
+        var norm = 0.0
+        var value:Double = 0.0
+        for i in 0..<vector.count {
+            value = abs(vector[i])
+            if norm < value {
+                norm = value
+            }
+        }
+        return value
+    }
+
     
     
 }

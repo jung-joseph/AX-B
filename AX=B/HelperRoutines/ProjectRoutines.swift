@@ -45,7 +45,7 @@ func transferTextToDouble(equations: Equations, system: Gauss) -> Bool{
     //        print("equations \(equations.neq)")
     for i in 0..<equations.neq {
         
-        //Check that entries are Doubles
+        //Check that B Vector entries are Doubles
         if let value = (Double(equations.bMatrixText[i])) {
             system.matrix[i][equations.neq] = value
             
@@ -59,12 +59,11 @@ func transferTextToDouble(equations: Equations, system: Gauss) -> Bool{
             
             
             
-            //Check that entries are Doubles
+            //Check that matrix entries are Doubles
             if let value = (Double(equations.aMatrixText[i][j])) {
                 system.matrix[i][j] = value
-                //                    print("i: \(i) j: \(j) matrixij: \(system.matrix[i][j])")
             } else {
-                //
+                
                 return true
             }
             
@@ -74,6 +73,14 @@ func transferTextToDouble(equations: Equations, system: Gauss) -> Bool{
         
     }
     return false
+}
+
+func transferNewRHS(bVector: [Double], equations: Equations, system: Gauss) {
+    
+    for i in 0..<equations.neq {
+        system.matrix[i][equations.neq] = bVector[i]
+    }
+    
 }
 
 // Mark: - Functions to write text files
@@ -111,6 +118,7 @@ func transferTextToDouble(equations: Equations, system: Gauss) -> Bool{
      return paths[0]
  }
  
+
 //Mark: - hideKeyboard
 #if canImport(UIKit)
 extension View {
