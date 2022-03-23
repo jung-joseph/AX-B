@@ -37,7 +37,7 @@ struct LeftI_OButtons: View {
                 
             }
             .sheet(isPresented: $showNewProblem) {
-                NewProblemView(neqText: $neqText, showNewProblem: $showNewProblem)
+                NewProblemView(neqText: $neqText, showNewProblem: $showNewProblem,system: system)
                 
                     .onDisappear {
                         //                                    print("in Start New Problem")

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct EquationScreen: View {
+struct EquationView: View {
     @ObservedObject var equations: Equations
     @ObservedObject var system: Gauss
     @Binding var numSigFigs: String
@@ -20,6 +20,8 @@ struct EquationScreen: View {
             //MARK: - A Matrix
             
             AMatrixView(equations: equations)
+               
+
             
             //                MARK: - X Vector
             
@@ -52,9 +54,9 @@ struct EquationScreen: View {
 
 
 
-struct EquationSection_Previews: PreviewProvider {
+struct EquationView_Previews: PreviewProvider {
     static var previews: some View {
-            EquationScreen(equations: Equations(neq: 2), system: Gauss(neq: 2), numSigFigs: .constant("4"))
+            EquationView(equations: Equations(neq: 2), system: Gauss(neq: 2), numSigFigs: .constant("4"))
             
        
     }

@@ -16,6 +16,7 @@ struct NewProblemView: View {
     
     @State var isEditing = false
     
+    @ObservedObject var system: Gauss
 
 
     
@@ -56,7 +57,7 @@ struct NewProblemView: View {
                         neqText = "10"
                     }
                     self.showNewProblem = false
-                   
+                    system.kNum = "0"
                 }
                 .background(Color.red)
                 .foregroundColor(Color.white)
@@ -73,6 +74,6 @@ struct NewProblemView: View {
 
 struct NewProblemView_Previews: PreviewProvider {
     static var previews: some View {
-        NewProblemView(neqText: .constant(""), showNewProblem: .constant(true))
+        NewProblemView(neqText: .constant(""), showNewProblem: .constant(true), system: Gauss(neq: 2))
     }
 }

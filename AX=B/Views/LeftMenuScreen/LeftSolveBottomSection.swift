@@ -40,28 +40,20 @@ struct LeftSolveButtonSection: View {
                     return
                 }
                 
-                //                    print(system.solverMessage)
+// Estimate Matrix Condition number here, before solve
                 
+                system.kNumGCircles()
+
                 
                 
                 let success = self.system.gaussSolve()
-                let xVectorSave = self.system.x // save solution for Condition Number computation
 
                 
                 if success { // copy solution to Text
                     system.residual()
                     solutionToText(equations: equations, system: system, numSigFigs: numSigFigs)
                     
-                    // compute Condition Number Estimate
-                      // transfer Residual to RHS
-                    transferNewRHS(bVector: system.residual(), equations: equations, system: system)
-                    system.printAMatrix()
-                    // solve new y tilde
-                    self.system.gaussSolve()
-                    system.printX()
-                    system.kNumber(residualSolutionVector: self.system.x, xSolutionVector: xVectorSave )
-                    
-                    print("Condition Number \(system.kNum)")
+                      
                 }
                 
                 showEquationView = true
@@ -93,9 +85,12 @@ struct LeftSolveButtonSection: View {
                     return
                 }
                 
+                // Estimate Matrix Condition number here, before solve
+                                
+                                system.kNumGCircles()
+                
                 
                 let success = self.system.gaussMCPSolve()
-                let xVectorSave = self.system.x // save solution for Condition Number computation
 
                 
                 if success { // copy solution to Text
@@ -103,16 +98,7 @@ struct LeftSolveButtonSection: View {
                     system.residual()
                     solutionToText(equations: equations, system: system, numSigFigs: numSigFigs)
                     
-                    // compute Condition Number Estimate
-                      // transfer Residual to RHS
-                    transferNewRHS(bVector: system.residual(), equations: equations, system: system)
-                    system.printAMatrix()
-                    // solve new y tilde
-                    self.system.gaussMCPSolve()
-                    system.printX()
-                    system.kNumber(residualSolutionVector: self.system.x, xSolutionVector: xVectorSave )
                     
-                    print("Condition Number \(system.kNum)")
                 }
                 
                 showEquationView = true
@@ -143,10 +129,11 @@ struct LeftSolveButtonSection: View {
                     self.showEquationView = true
                     return
                 }
-                //
+                // Estimate Matrix Condition number here, before solve
+                                
+                                system.kNumGCircles()
                 
                 let success = self.system.gaussSCPSolve()
-                let xVectorSave = self.system.x // save solution for Condition Number computation
                 
                 //
                 // write solution and error to Text
@@ -154,7 +141,7 @@ struct LeftSolveButtonSection: View {
                     // copy solution to Text
                     system.residual()
                     solutionToText(equations: equations, system: system, numSigFigs: numSigFigs)
-                    // compute Condition Number Estimate
+
                     let errorCode = transferTextToDouble(equations: equations, system: system)
                     if errorCode {
                         system.solverMessage = "Invalid Entry"
@@ -162,16 +149,7 @@ struct LeftSolveButtonSection: View {
                         return
                     }
                     
-                    // compute Condition Number Estimate
-                      // transfer Residual to RHS
-                    transferNewRHS(bVector: system.residual(), equations: equations, system: system)
-                    system.printAMatrix()
-                    // solve new y tilde
-                    self.system.gaussSCPSolve()
-                    system.printX()
-                    system.kNumber(residualSolutionVector: self.system.x, xSolutionVector: xVectorSave )
                     
-                    print("Condition Number \(system.kNum)")
                 }
                 showEquationView = true
                 

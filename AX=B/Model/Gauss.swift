@@ -528,7 +528,39 @@ class Gauss: ObservableObject {
         return value
     }
 
-    
+    func kNumGCircles() {
+        var max:Double = 0.0
+        var min:Double = 1.0
+        var rowSum:Double = 0.0
+
+        for i in 0..<matrix.count {
+            rowSum = 0.0
+            for j in 0..<matrix.count {
+                if i != j {
+                    rowSum = rowSum + abs(matrix[i][j])
+                }
+                
+                
+                
+            }
+            if max < abs(matrix[i][i]) + rowSum {
+                max = abs(matrix[i][i]) + rowSum
+            }
+            if min > abs(matrix[i][i]) - rowSum {
+                min = abs(matrix[i][i]) - rowSum
+                if min < 0.0 {
+                    min = 0.0
+                }
+            }
+           
+        }
+        
+        if min == 0.0 {
+            kNum = "Infinity (or potentially large)"
+        } else {
+            kNum = String(Int(max/min))
+        }
+    }
     
 }
 

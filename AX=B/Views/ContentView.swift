@@ -63,7 +63,8 @@ struct ContentView: View {
                     //                Mark:  EquationView
                     
                     if(self.showEquationView) {
-                        EquationsView(numEqs: self.numEqs, equations: equations, system: system, showEquationView: $showEquationView, numSigFigs: $numSigFigs)
+                        EquationsScreen(numEqs: self.numEqs, equations: equations, system: system, showEquationView: $showEquationView, numSigFigs: $numSigFigs)
+                        Spacer()
                         Spacer()
                     } else {
                         Spacer()

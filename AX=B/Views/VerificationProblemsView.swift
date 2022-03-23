@@ -39,6 +39,7 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -57,6 +58,8 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
+
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -71,6 +74,8 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
+
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -85,6 +90,8 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
+
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -103,6 +110,8 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
+
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -117,6 +126,8 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
+
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -133,6 +144,8 @@ struct VerificationProblemsView: View {
                             
                             self.showEquationView = false
                             self.showVerification = false
+                            self.system.kNum = "0"
+
                         }
                         .background(Color.red)
                         .foregroundColor(Color.white)
@@ -151,6 +164,8 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
+
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -165,6 +180,8 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
+
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -180,6 +197,8 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
+
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -195,6 +214,8 @@ struct VerificationProblemsView: View {
                         
                         self.showEquationView = false
                         self.showVerification = false
+                        self.system.kNum = "0"
+
                     }
                     .background(Color.red)
                     .foregroundColor(Color.white)
@@ -211,6 +232,8 @@ struct VerificationProblemsView: View {
                     
                     Button{
                         self.showHilbert = true
+                        self.system.kNum = "0"
+
                     } label: {
                         Text("Hilbert Matrices Ref. 4")
                             .padding(.horizontal, 4)
