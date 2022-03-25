@@ -39,7 +39,7 @@ class Gauss: ObservableObject {
         
     }
     
-    //Mark: - Object copy
+    //MARK: - Object copy
     func copyElements(newObject: Gauss) {
         
         self.neq = newObject.neq
@@ -66,7 +66,8 @@ class Gauss: ObservableObject {
         printX()
         
     }
-    
+    //MARK: - printAMatrix
+
     func printAMatrix() {
         print("The (augmented) A Matrix")
         
@@ -137,7 +138,7 @@ class Gauss: ObservableObject {
     
     
     
-    
+ //MARK: - Scaled Column Pivoting
     @discardableResult func gaussSCPSolve() -> Bool {
         // Gauss Elimination with Scaled Column Pivoting
         // Burden, Richard, Faires, J. Douglas, "Numerical Analysis", Third Ed., 1985
@@ -257,6 +258,7 @@ class Gauss: ObservableObject {
         return true
     }
     
+ //MARK: - Max Column Pivoting
     
     @discardableResult func gaussMCPSolve() -> Bool {
         // Gauss Elimination with Maximal Column Pivoting
@@ -364,7 +366,7 @@ class Gauss: ObservableObject {
     }
     
     
-    //Mark: - Gauss Elimination without pivoting
+    //MARK: - Gauss Elimination without pivoting
     
     @discardableResult func gaussSolve() -> Bool {
         
@@ -495,72 +497,253 @@ class Gauss: ObservableObject {
         return error
     }
     
-    func kNumber(residualSolutionVector: [Double], xSolutionVector: [Double]){
-//        compute an estimate for the Condition Number of a Matrix
+    //MARK: - CONDITION NUMBER
         
-        kNum = "0"
-        
-        let t = 15.0 // Double precision number
-        
-        let rSVNorm = vectorInfNorm(vector: residualSolutionVector)
-        print("\(rSVNorm)")
-        let xSVNorm = vectorInfNorm(vector: xSolutionVector)
-        print("\(xSVNorm)")
+    func CondNum(neq: Int,  originalSystem: Gauss, eigenSystem: Gauss, maxIt: Int, tolerance: Double)-> String {
+            var max:Double = 0.0
+            var min:Double = 1.0
+            var rowSum:Double = 0.0
 
-        if xSVNorm == 0.0 {
-            kNum = "Unable to compute"
             
-        } else {
-            kNum = String(Int(pow(10.0,t) * (rSVNorm / xSVNorm)))
+  
             
-        }
-    }
-    
-    func vectorInfNorm(vector: [Double])-> Double {
-        var norm = 0.0
-        var value:Double = 0.0
-        for i in 0..<vector.count {
-            value = abs(vector[i])
-            if norm < value {
-                norm = value
-            }
-        }
-        return value
-    }
-
-    func kNumGCircles() {
-        var max:Double = 0.0
-        var min:Double = 1.0
-        var rowSum:Double = 0.0
-
-        for i in 0..<matrix.count {
-            rowSum = 0.0
-            for j in 0..<matrix.count {
-                if i != j {
-                    rowSum = rowSum + abs(matrix[i][j])
+            for i in 0..<neq {
+                rowSum = 0.0
+                for j in 0..<neq {
+                    if i != j {
+                        rowSum = rowSum + abs(originalSystem.matrix[i][j])
+                    }
+                    
+                    
+                    
                 }
-                
-                
-                
-            }
-            if max < abs(matrix[i][i]) + rowSum {
-                max = abs(matrix[i][i]) + rowSum
-            }
-            if min > abs(matrix[i][i]) - rowSum {
-                min = abs(matrix[i][i]) - rowSum
-                if min < 0.0 {
-                    min = 0.0
+                if max < abs(originalSystem.matrix[i][i]) + rowSum {
+                    max = abs(originalSystem.matrix[i][i]) + rowSum
                 }
+                if min > abs(originalSystem.matrix[i][i]) - rowSum {
+                    min = abs(originalSystem.matrix[i][i]) - rowSum
+                    if min < 0.0 {
+                        min = 0.0
+                    }
+                }
+               
             }
-           
-        }
+            
+            
         
+        let bk0 = Array(repeating: 1.0, count: neq)
+        min = eigenSystem.inversePower(originalSystem: originalSystem, bk0: bk0, lamda0: 0.0, maxIt: maxIt, itDiffTol: tolerance)
+
         if min == 0.0 {
             kNum = "Infinity (or potentially large)"
         } else {
-            kNum = String(Int(max/min))
+                kNum = String(Int(max/min))
+            }
+            
+            return kNum
         }
-    }
+        
+        // MARK: - Vector Inf Norm
+        
+        func vectorInfNorm(vector: [Double])-> Double {
+            var norm = 0.0
+            var value:Double = 0.0
+            for i in 0..<vector.count {
+                value = abs(vector[i])
+                if norm < value {
+                    norm = value
+                }
+            }
+            return value
+        }
+        //MARK: - Inverse Power Method
+        func inversePower(originalSystem: Gauss, bk0:[Double], lamda0: Double, maxIt: Int, itDiffTol: Double)-> Double {
+            
+            // matrix: A matrix
+            // bk: Intial EigenVector guess
+            // lamda: Intial eigenvalue guess
+            // maxIt: maximum number of inversePower iterations
+            // tol: percentage difference for iteration to end
+            
+            var ck = 1.0
+            var iteration: Int = 0
+            var itDiff: Double = 10.0
+            var lamda:Double = lamda0
+            var bk = Array(repeating: 0.0, count: neq)
+            var lamdaOld:Double = lamda0 //set and initialize
+            
+            
+            
+            
+            // initalize the rhs
+            for i in 0..<neq {
+                bk[i] = bk0[i]
+            }
+            
+            
+            while iteration < maxIt && itDiff > itDiffTol {
+                
+                iteration += 1
+                
+                
+                // form (A - lamda I) and load rhs
+                for ii in 0..<neq {
+                    for jj in 0..<neq {
+                        self.matrix[ii][jj] = originalSystem.matrix[ii][jj]
+                    }
+                    self.matrix[ii][ii] = self.matrix[ii][ii] - lamda0
+
+                    self.matrix[ii][neq] = bk[ii]
+                }
+               
+                
+                // solve for next bk
+                self.gaussSCPSolve()
+                // update bk
+                for ii in 0..<neq {
+                    bk[ii] = self.x[ii]
+                }
+                // find ck
+                var minValue = 0.0
+                var saveIndex = 0
+                for ii in 0..<neq {
+                    if abs(bk[ii]) > minValue {
+                        saveIndex = ii
+                        minValue = abs(bk[ii])
+                    }
+                }
+                ck = bk[saveIndex]
+                
+                // normalize bk and fill rhs
+                for ii in 0..<neq {
+                    bk[ii] = bk[ii]/ck
+                }
+                // perform Rayleigh Quotient for eigenvalue
+                
+                lamda = abs(rayleighQuotient(matrix: originalSystem.matrix, b: bk))
+                // check iteration diff
+                itDiff = 100.0 * abs(lamda - lamdaOld)/lamda
+                lamdaOld = lamda
+            }
+            
+            return lamda
+        }
+
+       //MARK: - Rayleigh Quotient
+        
+        func rayleighQuotient(matrix:[[Double]], b:[Double]) -> Double {
+            
+            var productVect = [Double](repeating: 0.0, count: b.count)
+            
+            productVect = matMulVector(matrix: matrix, vector: b)
+            
+            let numerator = vectMulVect(vect1: b, vect2: productVect)
+            
+            let denominator = vectMulVect(vect1: b, vect2: b)
+            
+            if denominator == 0.0 {
+                print("denominator is 0.0")
+                return 0.0
+            }
+            let rayleighQ = numerator/denominator
+            
+            return rayleighQ
+            
+        }
+        
+        func matMulVector(matrix:[[Double]], vector:[Double])-> [Double] {
+            var sum: Double
+            var result = [Double](repeating: 0.0, count: vector.count)
+            
+            for i in 0..<vector.count {
+                sum = 0.0
+                for j in 0..<vector.count {
+                    sum = sum + matrix[i][j] * vector[j]
+                }
+                result[i] = sum
+            }
+            return result
+        }
+        
+        func vectMulVect(vect1:[Double], vect2:[Double]) -> Double {
+            
+            var sum = 0.0
+            
+            if vect1.count != vect2.count {
+                print("Vectors not the same length")
+                return 0.0
+            }
+            for i in 0..<vect1.count {
+                sum = sum + vect1[i] * vect2[i]
+            }
+            return sum
+        }
+//    func kNumber(residualSolutionVector: [Double], xSolutionVector: [Double]){
+////        compute an estimate for the Condition Number of a Matrix
+//
+//        kNum = "0"
+//
+//        let t = 15.0 // Double precision number
+//
+//        let rSVNorm = vectorInfNorm(vector: residualSolutionVector)
+//        print("\(rSVNorm)")
+//        let xSVNorm = vectorInfNorm(vector: xSolutionVector)
+//        print("\(xSVNorm)")
+//
+//        if xSVNorm == 0.0 {
+//            kNum = "Unable to compute"
+//
+//        } else {
+//            kNum = String(Int(pow(10.0,t) * (rSVNorm / xSVNorm)))
+//
+//        }
+//    }
+//
+//    func vectorInfNorm(vector: [Double])-> Double {
+//        var norm = 0.0
+//        var value:Double = 0.0
+//        for i in 0..<vector.count {
+//            value = abs(vector[i])
+//            if norm < value {
+//                norm = value
+//            }
+//        }
+//        return value
+//    }
+//
+//    func kNumGCircles() {
+//        var max:Double = 0.0
+//        var min:Double = 1.0
+//        var rowSum:Double = 0.0
+//
+//        for i in 0..<matrix.count {
+//            rowSum = 0.0
+//            for j in 0..<matrix.count {
+//                if i != j {
+//                    rowSum = rowSum + abs(matrix[i][j])
+//                }
+//
+//
+//
+//            }
+//            if max < abs(matrix[i][i]) + rowSum {
+//                max = abs(matrix[i][i]) + rowSum
+//            }
+//            if min > abs(matrix[i][i]) - rowSum {
+//                min = abs(matrix[i][i]) - rowSum
+//                if min < 0.0 {
+//                    min = 0.0
+//                }
+//            }
+//
+//        }
+//
+//        if min == 0.0 {
+//            kNum = "Infinity (or potentially large)"
+//        } else {
+//            kNum = String(Int(max/min))
+//        }
+//    }
     
 }
 

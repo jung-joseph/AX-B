@@ -21,8 +21,8 @@ struct LeftSolveButtonSection: View {
         VStack(alignment: .leading, spacing: 0) {
             
             Text("Select Solution Method:").padding(.bottom, 1)
-//            Text("Method:").padding(.bottom, 1)
-
+            //            Text("Method:").padding(.bottom, 1)
+            
             //MARK: - Gauss Elimination
             Button(action: {
                 
@@ -40,20 +40,20 @@ struct LeftSolveButtonSection: View {
                     return
                 }
                 
-// Estimate Matrix Condition number here, before solve
+                // Estimate Matrix Condition number here, before solve
+                let eigenSystem = Gauss(neq: equations.neq)
+                system.kNum = eigenSystem.CondNum(neq: equations.neq, originalSystem: system, eigenSystem: eigenSystem, maxIt: 10, tolerance: 1.0)
                 
-                system.kNumGCircles()
-
                 
                 
                 let success = self.system.gaussSolve()
-
+                
                 
                 if success { // copy solution to Text
                     system.residual()
                     solutionToText(equations: equations, system: system, numSigFigs: numSigFigs)
                     
-                      
+                    
                 }
                 
                 showEquationView = true
@@ -86,12 +86,12 @@ struct LeftSolveButtonSection: View {
                 }
                 
                 // Estimate Matrix Condition number here, before solve
-                                
-                                system.kNumGCircles()
+                let eigenSystem = Gauss(neq: equations.neq)
+                system.kNum = eigenSystem.CondNum(neq: equations.neq, originalSystem: system, eigenSystem: eigenSystem, maxIt: 10, tolerance: 1.0)
                 
                 
                 let success = self.system.gaussMCPSolve()
-
+                
                 
                 if success { // copy solution to Text
                     
@@ -130,8 +130,8 @@ struct LeftSolveButtonSection: View {
                     return
                 }
                 // Estimate Matrix Condition number here, before solve
-                                
-                                system.kNumGCircles()
+                let eigenSystem = Gauss(neq: equations.neq)
+                system.kNum = eigenSystem.CondNum(neq: equations.neq, originalSystem: system, eigenSystem: eigenSystem, maxIt: 10, tolerance: 1.0)
                 
                 let success = self.system.gaussSCPSolve()
                 
@@ -141,7 +141,7 @@ struct LeftSolveButtonSection: View {
                     // copy solution to Text
                     system.residual()
                     solutionToText(equations: equations, system: system, numSigFigs: numSigFigs)
-
+                    
                     let errorCode = transferTextToDouble(equations: equations, system: system)
                     if errorCode {
                         system.solverMessage = "Invalid Entry"
@@ -165,12 +165,12 @@ struct LeftSolveButtonSection: View {
                 .padding(.bottom, 15)
             
             
-          
             
-//            Image(systemName: "arrow.down")
-//                .resizable()
-//                .frame(width: 15, height: 15, alignment: .topLeading)
-//                .foregroundColor(.black)
+            
+            //            Image(systemName: "arrow.down")
+            //                .resizable()
+            //                .frame(width: 15, height: 15, alignment: .topLeading)
+            //                .foregroundColor(.black)
             
             //MARK: - Write File
             
@@ -204,7 +204,7 @@ struct LeftSolveButtonSection: View {
             .cornerRadius(10)
             .shadow(radius: 10)
             .padding(.bottom, 5)
-
+            
             
             
             
@@ -245,7 +245,7 @@ struct LeftSolveButtonSection: View {
             .foregroundColor(Color.white)
             .cornerRadius(10)
             .shadow(radius: 10)
-//            .padding()
+            //            .padding()
             
             
         }
