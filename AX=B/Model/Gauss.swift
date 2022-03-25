@@ -534,10 +534,13 @@ class Gauss: ObservableObject {
         let bk0 = Array(repeating: 1.0, count: neq)
         min = eigenSystem.inversePower(originalSystem: originalSystem, bk0: bk0, lamda0: 0.0, maxIt: maxIt, itDiffTol: tolerance)
 
-        if min == 0.0 {
-            kNum = "Infinity (or potentially large)"
+        print("max: \(max) min: \(min)")
+        
+        
+        if abs(min) < 1.0e-15 {
+            kNum = "Infinity"
         } else {
-                kNum = String(Int(max/min))
+            kNum = String(format:"%.1e",max/min)
             }
             
             return kNum
@@ -626,6 +629,8 @@ class Gauss: ObservableObject {
                 lamdaOld = lamda
             }
             
+   
+            print("lamda  in Power \(lamda)")
             return lamda
         }
 
@@ -645,8 +650,16 @@ class Gauss: ObservableObject {
                 print("denominator is 0.0")
                 return 0.0
             }
-            let rayleighQ = numerator/denominator
+            var rayleighQ:Double = 0.0
+            let numIsNan = numerator.isNaN
+            let denoIsNan = denominator.isNaN
+            if numIsNan || denoIsNan {
+                rayleighQ = 0.0
+            } else {
+                rayleighQ = numerator/denominator
+            }
             
+
             return rayleighQ
             
         }

@@ -31,7 +31,7 @@ class HilbertViewModel: ObservableObject {
         
         let hilbertObject = Hilbert(order: Int(hilbertSizeText)  ?? 2 )
         hilbertMatrix = hilbertObject.hilbertMatrix()
-        hilbertObject.printHilbertMatrix()
+//        hilbertObject.printHilbertMatrix()
         
         
     }

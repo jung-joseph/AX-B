@@ -38,16 +38,7 @@ struct HilbertView: View {
                     self.showVerification = false
                     self.showEquationView = true
 
-                    // check range for Hilbert matrix size
-//                    if let hilbertSize = Int(hilbertSizeText){
-//                        if hilbertSize > 1 && hilbertSize < 6 {
-//                            return
-//                        } else {
-//                            hilbertSizeText = "2"
-//                        }
-//                    } else {
-//                        hilbertSizeText = "2"
-//                    }
+                    
                     
                     
                     // create Hilbert matrix
@@ -74,14 +65,6 @@ struct HilbertView: View {
                     let tempGauss = Gauss(neq: self.numEqs)
                     system.copyElements(newObject: tempGauss)
                     
-                    
-                    
-//                    // copy Hilbert matrix in to equations object
-//                    for i in 0..<hilbertViewModel.hilbertMatrix.count {
-//                        for j in 0..<hilbertViewModel.hilbertMatrix.count {
-//                            equations.aMatrixText
-//                        }
-//                    }
                     
                 }) {
                     Text("Submit")
