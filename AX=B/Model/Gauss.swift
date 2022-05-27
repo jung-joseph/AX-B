@@ -534,7 +534,7 @@ class Gauss: ObservableObject {
         let bk0 = Array(repeating: 1.0, count: neq)
         min = eigenSystem.inversePower(originalSystem: originalSystem, bk0: bk0, lamda0: 0.0, maxIt: maxIt, itDiffTol: tolerance)
 
-        print("max: \(max) min: \(min)")
+//        print("max: \(max) min: \(min)")
         
         
         if abs(min) < 1.0e-15 {
@@ -630,7 +630,7 @@ class Gauss: ObservableObject {
             }
             
    
-            print("lamda  in Power \(lamda)")
+//            print("lamda  in Power \(lamda)")
             return lamda
         }
 
