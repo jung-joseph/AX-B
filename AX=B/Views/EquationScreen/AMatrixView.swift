@@ -29,7 +29,7 @@ struct AMatrixView: View {
                             
 //                            Spacer(minLength: 15)
                             
-                            MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                            MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count, bracketColor: .black)
                             
                             ForEach(0..<self.equations.aMatrixText.count, id: \.self) {
                                 let j = $0
@@ -45,7 +45,7 @@ struct AMatrixView: View {
                                 .colorScheme(.light)
 
                             }
-                            MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                            MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count, bracketColor: .black)
                         }
                         
                     }

@@ -15,22 +15,24 @@ struct ErrorView: View {
         Group { // Error
             VStack(spacing: 0){
                 
-                        Text("Residual")
-                            .bold()
+                Text("Residual")
+                    .bold()
+                    .foregroundColor(.red)
                 
                 ForEach(0..<self.system.error.count, id: \.self) {
                     let i = $0
 
                     HStack{
 
-                        MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                        MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count,bracketColor: .clear)
 
                         Text("\(self.equations.errorText[i])")
                             .frame(width: 80, height: 20)
                             .font(.custom("Arial", size: 15))
                             .fixedSize()
+                            .foregroundColor(.red)
 
-                        MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                        MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count,bracketColor: .clear)
                     }
                 }
                 

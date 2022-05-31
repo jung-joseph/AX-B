@@ -13,29 +13,42 @@ struct MatrixBracketView: View {
     var rowHeight: CGFloat = 50
     var indexI: Int = 0
     var count: Int = 0
+    var bracketColor:Color
     
     var body: some View {
-        
         if side == "left" { //Left
             if indexI == 0 && indexI == count - 1 {
                 VStack(alignment: .leading, spacing: 0) {
-                    Rectangle().frame(width: 5, height: 3)
-                    Rectangle().frame(width: 3, height: rowHeight)
-                    Rectangle().frame(width: 5, height: 3).offset(x: 0)
+                    Rectangle()
+                        .frame(width: 5, height: 3)
+                    Rectangle()
+                        .frame(width: 3, height: rowHeight)
+                    Rectangle()
+                        .frame(width: 5, height: 3).offset(x: 0)
                 }
             }else if indexI == 0 { //top
                 VStack(alignment: .leading, spacing: 0) {
-                    Rectangle().frame(width: 5, height: 3)
-                    Rectangle().frame(width: 3, height: rowHeight)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 5, height: 3)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 3, height: rowHeight)
                 }
             } else if indexI == count - 1 { //bottom
                 VStack(alignment: .leading, spacing: 0) {
-                    Rectangle().frame(width: 3, height: rowHeight).offset(x: 0)
-                    Rectangle().frame(width: 5, height: 3).offset(x: 0)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 3, height: rowHeight).offset(x: 0)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 5, height: 3).offset(x: 0)
                 }
             } else {
                 VStack(alignment: .leading, spacing: 0) {
-                    Rectangle().frame(width: 3, height: rowHeight).offset(x: -2)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 3, height: rowHeight).offset(x: -2)
                 }
             }
         } else if side == "right" { // right
@@ -48,17 +61,27 @@ struct MatrixBracketView: View {
                 }
             }else if indexI == 0 {
                 VStack(alignment: .trailing, spacing: 0) {
-                    Rectangle().frame(width: 5, height: 3)
-                    Rectangle().frame(width: 3, height: rowHeight)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 5, height: 3)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 3, height: rowHeight)
                 }
             } else if indexI == count - 1 {
                 VStack(alignment: .trailing, spacing: 0) {
-                    Rectangle().frame(width: 3, height: rowHeight).offset(x: 0)
-                    Rectangle().frame(width: 5, height: 3).offset(x: 0)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 3, height: rowHeight).offset(x: 0)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 5, height: 3).offset(x: 0)
                 }
             } else {
                 VStack(alignment: .trailing, spacing: 0) {
-                    Rectangle().frame(width: 3, height: rowHeight).offset(x: +2)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 3, height: rowHeight).offset(x: +2)
                 }
             }
 
@@ -68,6 +91,6 @@ struct MatrixBracketView: View {
 
 struct MatrixBracketView_Previews: PreviewProvider {
     static var previews: some View {
-        MatrixBracketView()
+        MatrixBracketView(bracketColor: .black)
     }
 }

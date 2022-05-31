@@ -20,7 +20,7 @@ struct BVectorView: View {
                     
                     HStack{
                         
-                        MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                        MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count,bracketColor: .black)
                         
                         TextField(self.equations.bMatrixText[i], text: self.$equations.bMatrixText[i])
                             .frame(width: 60, height: 20)
@@ -30,7 +30,7 @@ struct BVectorView: View {
                             .foregroundColor(Double(self.equations.bMatrixText[i]) != nil ? Color.black : Color.red)
                             .colorScheme(.light)
 
-                        MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                        MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count,bracketColor: .black)
                     }
                 }
 

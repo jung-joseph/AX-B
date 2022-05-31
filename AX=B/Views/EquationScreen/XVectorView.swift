@@ -23,14 +23,14 @@ struct XVectorView: View {
                     ForEach(0..<self.equations.xMatrixText.count, id: \.self) {
                         let i = $0
                         HStack {
-                        MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                            MatrixBracketView(side: "left",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count, bracketColor: .black)
                         
                         Text("\(self.equations.xMatrixText[i])")
                                 .frame(width: 90, height: 20)
                                 .font(.custom("Arial", size: 15))
                                 .fixedSize()
                         
-                        MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count)
+                            MatrixBracketView(side: "right",  rowHeight: 50, indexI: i, count: self.equations.aMatrixText.count, bracketColor: .black)
                         }
                     }
 //                            .padding([.top, .bottom], 8)

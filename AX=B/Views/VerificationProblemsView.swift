@@ -189,24 +189,24 @@ struct VerificationProblemsView: View {
                     .shadow(radius: 10)
                     .padding()
                     
-                    Button("Load Problem 4x4#2 (NoSolution)"){
-                        let verificationProblem = verificationProblems.noSolution4x4
-                        
-                        decodeData(jsonInfile: verificationProblem!)
-                        
-                        
-                        self.showEquationView = false
-                        self.showVerification = false
-                        self.system.kNum = "0"
-
-                    }
-                    .background(Color.red)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
-                    .padding()
+//                    Button("Load Problem 4x4#2 (NoSolution)"){
+//                        let verificationProblem = verificationProblems.noSolution4x4
+//
+//                        decodeData(jsonInfile: verificationProblem!)
+//
+//
+//                        self.showEquationView = false
+//                        self.showVerification = false
+//                        self.system.kNum = "0"
+//
+//                    }
+//                    .background(Color.red)
+//                    .foregroundColor(Color.white)
+//                    .cornerRadius(10)
+//                    .shadow(radius: 10)
+//                    .padding()
                     
-                    Button("Load Problem 4x4#3"){
+                    Button("Load Problem 4x4#2"){
                         let verificationProblem = verificationProblems.fourbyfour
                         
                         decodeData(jsonInfile: verificationProblem!)
