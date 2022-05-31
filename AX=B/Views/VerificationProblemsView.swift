@@ -119,7 +119,7 @@ struct VerificationProblemsView: View {
                     .shadow(radius: 10)
                     .padding()
                     
-                    Button("Load Problem 3x3#1 (NoSolution with Gauss)"){
+                    Button("Load Problem 3x3#1 (No Pivot Failure)"){
                         let verificationProblem = verificationProblems.noSolutionGauss3x3
                         
                         decodeData(jsonInfile: verificationProblem!)
@@ -172,7 +172,7 @@ struct VerificationProblemsView: View {
                     .cornerRadius(10)
                     .shadow(radius: 10)
                     .padding()
-                    Button("Load Problem 4x4#1 (Gauss Failure/Round-Off 4x4)"){
+                    Button("Load Problem 4x4#1 (No Pivot Failure)"){
                         let verificationProblem = verificationProblems.scp4x4
                         
                         decodeData(jsonInfile: verificationProblem!)
