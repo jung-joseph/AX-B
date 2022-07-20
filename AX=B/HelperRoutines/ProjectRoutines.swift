@@ -99,6 +99,8 @@ func transferNewRHS(bVector: [Double], equations: Equations, system: Gauss) {
         
         
         let input = try String(contentsOf: fileURL)
+        print("FileURL: \(fileURL)")
+        print("File content")
         print(input)
         
         return "File Saved"

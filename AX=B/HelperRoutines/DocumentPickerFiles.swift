@@ -22,11 +22,13 @@ struct DocumentPicker: UIViewControllerRepresentable {
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<DocumentPicker>) -> UIDocumentPickerViewController {
         
-        //        let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.text], asCopy: true)
         
         let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.text])
-        
+
         controller.delegate = context.coordinator
+        
+        // Set the initial directory
+        controller.directoryURL =   getDocumentsDirectory()
         
         return controller
     }
@@ -50,7 +52,10 @@ class DocumentPickerCoordinator: NSObject, UIDocumentPickerDelegate, UINavigatio
     
     func documentPicker(_ controller: UIDocumentPickerViewController,
                         didPickDocumentsAt urls: [URL]) {
+        
+//        let URL =   getDocumentsDirectory()
         let fileURL = urls[0]
+        print("fileURL in Picker \(fileURL)")
         
         
         do {
