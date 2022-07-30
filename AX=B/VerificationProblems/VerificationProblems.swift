@@ -43,7 +43,7 @@ class VerificationProblems: ObservableObject {
 """.data(using: .utf8)
     
     @Published var threexthree4 = """
-    {"bMatrixText":["61.3","0.0","83.7"],"bMatrix":[0,0,0],"aMatrix":[[0,0,0],[0,0,0],[0,0,0]],"xMatrix":[0,0,0],"xMatrixText":["-","-","-"],"errorText":["-","-","-"],"neq":3,"aMatrixText":[["0.007","61.20","0.093"],["4.81","-5.92","1.110"],["81.400","1.12","1.18"]]}
+    {"bMatrixText":["-5.0","-9.0","9.0"],"bMatrix":[0,0,0],"aMatrix":[[0,0,0],[0,0,0],[0,0,0]],"xMatrix":[0,0,0],"xMatrixText":["-","-","-"],"neq":3,"aMatrixText":[["2.0","4.0","-1.0"],["1.0","1.0","-3.0"],["4.0","1.0","2.0"]],"errorText":["-","-","-"]}
 """.data(using: .utf8)
     
     @Published var idenity3x3 = """

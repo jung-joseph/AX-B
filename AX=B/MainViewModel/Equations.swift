@@ -12,6 +12,7 @@ class Equations: ObservableObject, Codable {
     @Published var aMatrix = [[Double]]() // create empty aMatrix
     @Published var xMatrix = [Double]() // create empty Solution Vector, xMatrix
     @Published var bMatrix = [Double]() // create empty Load Vector, bMatrix
+    @Published var error = [Double]() // create empty residual Vector
     @Published var fillerStarVector = [String]() // filler vector for "*"
     @Published var fillerEqualVector = [String]()// filler vector for "="
     
@@ -41,6 +42,7 @@ class Equations: ObservableObject, Codable {
         fillerStarVector = Array(repeating: " ", count: neq/2)
         fillerEqualVector = Array(repeating: " ", count: neq/2)
         
+//        error = Array(repeating: 0.0, count: neq)
         errorText = Array(repeating: "-", count: neq)
 
         
@@ -57,6 +59,7 @@ class Equations: ObservableObject, Codable {
         case aMatrix
         case xMatrix
         case bMatrix
+//        case error
         case fillerStarVector
         case fillerEqualVector
     }
@@ -75,6 +78,8 @@ class Equations: ObservableObject, Codable {
         aMatrix = try values.decode([[Double]].self, forKey: .aMatrix)
         xMatrix = try values.decode([Double].self, forKey: .xMatrix)
         bMatrix = try values.decode([Double].self, forKey: .bMatrix)
+//        error = try values.decode([Double].self, forKey: .error)
+//
 
     }
     
@@ -92,6 +97,7 @@ class Equations: ObservableObject, Codable {
         try container.encode(aMatrix, forKey: .aMatrix)
         try container.encode(bMatrix, forKey: .bMatrix)
         try container.encode(xMatrix, forKey: .xMatrix)
+//        try container.encode(error, forKey: .error)
     }
     
 //Mark: - Object copy
@@ -105,6 +111,9 @@ class Equations: ObservableObject, Codable {
         self.aMatrix = newObject.aMatrix
         self.bMatrix = newObject.bMatrix
         self.xMatrix = newObject.xMatrix
+//
+//        self.error = newObject.error
+//
         self.fillerStarVector = newObject.fillerStarVector
         self.fillerEqualVector = newObject.fillerEqualVector
       

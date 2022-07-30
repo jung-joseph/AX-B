@@ -20,10 +20,13 @@ struct MatrixBracketView: View {
             if indexI == 0 && indexI == count - 1 {
                 VStack(alignment: .leading, spacing: 0) {
                     Rectangle()
+                        .fill(bracketColor)
                         .frame(width: 5, height: 3)
                     Rectangle()
+                        .fill(bracketColor)
                         .frame(width: 3, height: rowHeight)
                     Rectangle()
+                        .fill(bracketColor)
                         .frame(width: 5, height: 3).offset(x: 0)
                 }
             }else if indexI == 0 { //top
@@ -54,9 +57,15 @@ struct MatrixBracketView: View {
         } else if side == "right" { // right
             if indexI == 0 && indexI == count - 1 {
                 VStack(alignment: .trailing, spacing: 0) {
-                    Rectangle().frame(width: 5, height: 3)
-                    Rectangle().frame(width: 3, height: rowHeight)
-                    Rectangle().frame(width: 5, height: 3).offset(x: 0)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 5, height: 3)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 3, height: rowHeight)
+                    Rectangle()
+                        .fill(bracketColor)
+                        .frame(width: 5, height: 3).offset(x: 0)
 
                 }
             }else if indexI == 0 {

@@ -45,13 +45,15 @@ struct LeftSolveButtonSection: View {
                 system.kNum = eigenSystem.CondNum(neq: equations.neq, originalSystem: system, eigenSystem: eigenSystem, maxIt: 10, tolerance: 1.0)
                 
                 
-                
+                // Call solver
                 let success = self.system.gaussSolve()
                 
                 
-                if success { // copy solution to Text
+                if success {
+                    // compute residual
                     system.residual()
-                    solutionToText(equations: equations, system: system, numSigFigs: numSigFigs)
+                    // copy solution to Text
+                    solutionToViewModel(equations: equations, system: system, numSigFigs: numSigFigs)
                     
                     
                 }
@@ -94,9 +96,10 @@ struct LeftSolveButtonSection: View {
                 
                 
                 if success { // copy solution to Text
-                    
+                    //compute residual
                     system.residual()
-                    solutionToText(equations: equations, system: system, numSigFigs: numSigFigs)
+                    // copy solutio to Text
+                    solutionToViewModel(equations: equations, system: system, numSigFigs: numSigFigs)
                     
                     
                 }
@@ -136,11 +139,13 @@ struct LeftSolveButtonSection: View {
                 let success = self.system.gaussSCPSolve()
                 
                 //
-                // write solution and error to Text
                 if success {
-                    // copy solution to Text
+                    
+                    // compute solution residual
                     system.residual()
-                    solutionToText(equations: equations, system: system, numSigFigs: numSigFigs)
+                    // copy solution to Text
+
+                    solutionToViewModel(equations: equations, system: system, numSigFigs: numSigFigs)
                     
                     let errorCode = transferTextToDouble(equations: equations, system: system)
                     if errorCode {
@@ -209,44 +214,44 @@ struct LeftSolveButtonSection: View {
             
             
             
-            //MARK: - Write Solution Vector
-            
-            Button {
-                showFileNamer = true
-                filename = ""
-                
-            } label: {
-                Text("Save Solution")
-                    .padding(.horizontal, 4)
-                
-            }
-            .sheet(isPresented: $showFileNamer) {
-                FileNamer(fileName: self.$filename, showFileNamer: self.$showFileNamer)
-                
-                    .onDisappear {
-                        var solutionVector = [Double]()
-                        //                            print("self.numEqs \(self.numEqs)")
-                        for i in 0..<equations.neq {
-                            solutionVector.append(Double(self.equations.xMatrixText[i]) ?? 0.0)
-                        }
-                        //
-                        
-                        
-                        let encodedData = try! JSONEncoder().encode(solutionVector)
-                        let tempEncodedData = String(data: encodedData, encoding: .utf8)!
-                        
-                        //                             Write to Files App
-                        system.solverMessage = writeTextFile( fileName: filename, contents: tempEncodedData)
-                        
-                        
-                    }
-            }
-            .background(Color.blue)
-            .foregroundColor(Color.white)
-            .cornerRadius(10)
-            .shadow(radius: 10)
-            //            .padding()
-            
+//            //MARK: - Write Solution Vector
+//            
+//            Button {
+//                showFileNamer = true
+//                filename = ""
+//                
+//            } label: {
+//                Text("Save Solution")
+//                    .padding(.horizontal, 4)
+//                
+//            }
+//            .sheet(isPresented: $showFileNamer) {
+//                FileNamer(fileName: self.$filename, showFileNamer: self.$showFileNamer)
+//                
+//                    .onDisappear {
+//                        var solutionVector = [Double]()
+//                        //                            print("self.numEqs \(self.numEqs)")
+//                        for i in 0..<equations.neq {
+//                            solutionVector.append(Double(self.equations.xMatrixText[i]) ?? 0.0)
+//                        }
+//                        //
+//                        
+//                        
+//                        let encodedData = try! JSONEncoder().encode(solutionVector)
+//                        let tempEncodedData = String(data: encodedData, encoding: .utf8)!
+//                        
+//                        //                             Write to Files App
+//                        system.solverMessage = writeTextFile( fileName: filename, contents: tempEncodedData)
+//                        
+//                        
+//                    }
+//            }
+//            .background(Color.blue)
+//            .foregroundColor(Color.white)
+//            .cornerRadius(10)
+//            .shadow(radius: 10)
+//            //            .padding()
+//            
             
         }
     }

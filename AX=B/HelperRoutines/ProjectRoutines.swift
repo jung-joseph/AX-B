@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 //Mark: - the following routines are at project scope
 
-func solutionToText(equations: Equations, system: Gauss, numSigFigs: String) {
+func solutionToViewModel(equations: Equations, system: Gauss, numSigFigs: String) {
     
     let numDecimalPlaces = Int(numSigFigs)! - 1
     
@@ -31,7 +31,13 @@ func solutionToText(equations: Equations, system: Gauss, numSigFigs: String) {
         }
         
         equations.xMatrixText[i] = xValue
+        equations.xMatrix[i] = system.x[i]
+        equations.bMatrix[i] = system.bCopy[i]
         equations.errorText[i] = eValue
+        for j in 0..<equations.neq {
+            equations.aMatrix[i][j] = system.matrixCopy[i][j]
+        }
+//        equations.error[i] = system.error[i]
     }
 }
 

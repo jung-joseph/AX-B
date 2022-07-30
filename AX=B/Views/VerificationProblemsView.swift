@@ -137,7 +137,7 @@ struct VerificationProblemsView: View {
                     
                     
                     
-                        Button("Load Problem 3x3#4 Round-Off Ref. 3"){
+                        Button("Load Problem 3x3#2"){
                             let verificationProblem = verificationProblems.threexthree4
                             
                             decodeData(jsonInfile: verificationProblem!)
@@ -235,7 +235,7 @@ struct VerificationProblemsView: View {
                         self.system.kNum = "0"
 
                     } label: {
-                        Text("Hilbert Matrices Ref. 4")
+                        Text("Hilbert Matrices Ref. 3")
                             .padding(.horizontal, 4)
                     }
                     .sheet(isPresented: $showHilbert) {

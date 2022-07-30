@@ -12,8 +12,8 @@ class Gauss: ObservableObject {
     
     var neq: Int
     var matrix = [[Double]]() // create an empty matrix
-    var matrixCopy = [[Double]]()
-    var bCopy = [Double]()
+    @Published var matrixCopy = [[Double]]()
+    @Published var bCopy = [Double]()
     
     
     @Published var x = [Double]()
